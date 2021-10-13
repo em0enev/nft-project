@@ -4,26 +4,16 @@ import Logo from '../logo/logo';
 import TextField from '@mui/material/TextField';
 import SearchIcon from '@mui/icons-material/Search';
 import InputAdornment from '@mui/material/InputAdornment';
+import styles from "./Header.module.scss"
+import classNames from "classnames";
+
 
 export default function Header() {
     return (
-        //     <Grid sx={{ borderTop: '2px dashed grey', padding: "10px", }} container direction="row" justifyContent="space-between" >
-        //         <Logo></Logo>
-        //         <TextField sx={{ width: "30%" }} placeholder="Find items, users and activities" variant="outlined" InputProps={{
-        //             startAdornment: (
-        //                 < InputAdornment position="start" >
-        //                     <SearchIcon color="primary" />
-        //                 </InputAdornment>
-        //             )
-        //         }} />
-        //         <div>
-        //             <Button variant='text'>Home</Button>
-        //             <Button variant='text'>Activity</Button>
-        //             <Button variant="contained">Explore</Button>
-        //         </div >
-        //     </Grid >
-
-        <Grid sx={{ borderTop: '2px dashed grey', padding: "10px", }} container direction="row" justifyContent="space-between" >
+        <Grid container
+            sx={{borderTop:" 2px dashed #4e24f2", borderBottom:" 2px dashed #4e24f2", padding: "5px"}}
+            direction="row"
+            justifyContent="space-between" >
             <Grid item xs={2}>
                 <Logo></Logo>
             </Grid>
@@ -36,7 +26,11 @@ export default function Header() {
                     )
                 }} />
             </Grid>
-            <Grid item xs justifyContent="flex-end">
+            <Grid item xs container
+                direction="row"
+                justifyContent="flex-end"
+                alignItems="center">
+
                 <Button variant='text'>Home</Button>
                 <Button variant='text'>Activity</Button>
                 <Button variant="contained">Explore</Button>
