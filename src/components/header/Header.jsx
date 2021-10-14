@@ -4,8 +4,6 @@ import Logo from '../logo/logo';
 import TextField from '@mui/material/TextField';
 import SearchIcon from '@mui/icons-material/Search';
 import InputAdornment from '@mui/material/InputAdornment';
-import styles from "./Header.module.scss"
-import classNames from "classnames";
 
 
 export default function Header() {
