@@ -1,0 +1,24 @@
+@use "../../styles/colors";
+
+.avatar{
+    
+}
+
+.name{
+    position: relative;
+    top: 2.5px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin: 0px 25px;
+}
+
+.info{
+    position: relative;
+    top: -2.5px;
+    margin: 0px 25px;
+    color: colors.$info_main;
+}
+
+.user{
+    display: inline-flex;
+}
