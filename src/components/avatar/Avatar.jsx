@@ -7,8 +7,8 @@ export default function Avatar({ size = 90, url, verified = false, }) {
     const imgSrc = url !== undefined ? url : defaultImageSrc;
 
     return (
-        <div className={classNames(styles.avatar)}>
-            <img style={{ width: size, height: size }} className={classNames(styles.image)} src={imgSrc}></img>
+        <div className={classNames(styles.avatar)} style={{ width: size, height: size }}>
+            <img  className={classNames(styles.image)} src={imgSrc}></img>
             {verified && <img className={classNames(styles.badge)} src={badgeIconSrc} />}
         </div>
     );

@@ -1,13 +1,17 @@
 .avatar{
-    display: block;
+    position: relative;
 }
 
 .image{
+    position: absolute;
     border-radius: 50%;
+    width: inherit;
+    height: inherit;
 }
 
 .badge{
-    position: relative;
-    left: -70px;
-    top: -20px;
+    position: absolute;
+    top: 70%;
+    right: -10%;
+    width: 2rem;
 }
