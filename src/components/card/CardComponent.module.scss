@@ -1,0 +1,24 @@
+@use "../../styles/colors";
+
+.card{
+
+}
+
+.media{
+    border-radius: 20px;
+    margin: 20px 0px;
+}
+
+.title{
+    font-weight: bold;
+}
+
+.price{
+    position: relative;
+    top: -5px;
+    color: colors.$secondary_main;
+}
+
+.likes{
+    padding: 15px;
+}

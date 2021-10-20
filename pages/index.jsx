@@ -1,6 +1,6 @@
 
-import User from '../src/components/user/User.jsx';
+import CardComponent from '../src/components/card/CardComponent.jsx';
 
 export default function Index() {
-  return <User name={"Okay"} info={"boomer"} avatar={"/images/avatar.png"} verified={true} size={55} />
+  return <CardComponent user={{ avatarUrl: undefined, verified: true }} likes={13125} name={"Some name"} price={"12.3"} currency={"ETH"} />
 }
