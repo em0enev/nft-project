@@ -25,8 +25,8 @@ export default function Trending({ cards = [] }) {
                         value={period}
                         onChange={handleChange}
                     >
-                        <MenuItem value={"This Week"} autoFocus={true}>This Week</MenuItem>
-                        <MenuItem value={"This Month"} autoFocus={true}>This Month</MenuItem>
+                        <MenuItem value={"This Week"}>This Week</MenuItem>
+                        <MenuItem value={"This Month"}>This Month</MenuItem>
                     </Select>
                 </FormControl>
             </Grid >
