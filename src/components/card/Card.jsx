@@ -1,4 +1,4 @@
-import { Card as MaterialCard } from '@mui/material/Card';
+import { Card as MUICard } from "@mui/material/"
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Avatar from "../avatar/Avatar";
@@ -12,7 +12,7 @@ import millify from "millify";
 
 export default function Card({ name, likes = 0, mediaUrl, user, price, currency }) {
     return (
-        <div sx={{  }} className={classNames(styles.card)}>
+        <MUICard variant="outlined" className={classNames(styles.card)}> 
             <CardContent>
                 <Avatar verified={user.verified} url={user.avatarUrl} size={30} />
                 <CardMedia
@@ -28,10 +28,9 @@ export default function Card({ name, likes = 0, mediaUrl, user, price, currency 
                     alignItems="center"
                 >
                     <Grid item>
-                        <Typography className={classNames(styles.title)}>{name}</Typography>
+                        <Typography className={classNames(styles.title)} >{name}</Typography>
                         <Typography className={classNames(styles.price)}>~{price} {currency}</Typography>
                     </Grid>
-
                     <Chip variant="outlined"
                         color="success"
                         size="small"
@@ -41,6 +40,6 @@ export default function Card({ name, likes = 0, mediaUrl, user, price, currency 
                         className={classNames(styles.likes)} />
                 </ Grid>
             </CardContent>
-        </div>
+        </MUICard>
     );
 }
