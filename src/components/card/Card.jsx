@@ -1,26 +1,37 @@
-import { Card as MUICard } from "@mui/material/"
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
+import { Card as MUICard, CardContent, CardMedia, Container, Box, Chip } from "@mui/material/"
 import Avatar from "../avatar/Avatar";
 import classNames from "classnames";
 import styles from "./Card.module.scss"
-import Chip from '@mui/material/Chip';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import millify from "millify";
+import Countdown, { zeroPad } from 'react-countdown';
 
-export default function Card({ name, likes = 0, mediaUrl, user, price, currency }) {
+export default function Card({ name, likes = 0, mediaUrl, user, price, currency, timeLeft }) {
     return (
-        <MUICard variant="outlined" className={classNames(styles.card)}> 
+        <MUICard className={timeLeft ? classNames(styles.liveCard) : classNames(styles.card)}>
             <CardContent>
                 <Avatar verified={user.verified} url={user.avatarUrl} size={30} />
-                <CardMedia
-                    component="img"
-                    image={mediaUrl}
-                    alt="card media"
-                    className={classNames(styles.media)}
-                />
+                <Container disableGutters className={classNames(styles.imgContainer)}>
+                    <CardMedia
+                        component="img"
+                        image={mediaUrl}
+                        alt="card media"
+                        className={classNames(styles.media)}
+                    />{timeLeft &&
+                        <Box
+                            className={classNames(styles.badge)}
+                            sx={{
+                                width: 60,
+                                height: 25,
+                            }} >LIVE
+                        </Box>}
+                    {timeLeft && <Countdown
+                        date={Date.now() + timeLeft}
+                        renderer={props => <div className={classNames(styles.timer)}>{zeroPad(props.hours)}:{zeroPad(props.minutes)}:{zeroPad(props.seconds)}</div>}
+                    />}
+                </Container>
                 <Grid
                     container
                     direction="row"
@@ -28,7 +39,7 @@ export default function Card({ name, likes = 0, mediaUrl, user, price, currency 
                     alignItems="center"
                 >
                     <Grid item>
-                        <Typography className={classNames(styles.title)} >{name}</Typography>
+                        <Typography className={classNames(styles.title)}>{name}</Typography>
                         <Typography className={classNames(styles.price)}>~{price} {currency}</Typography>
                     </Grid>
                     <Chip variant="outlined"

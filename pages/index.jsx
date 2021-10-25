@@ -1,6 +1,7 @@
 
 import Trending from '../src/components/trending/Trending.jsx';
+import Card from '../src/components/card/Card.jsx';
 
 export default function Index() {
-  return <Trending cards={[{"name":"Clock","user":{"avatarUrl":"images/avatar.png","verified":true},"mediaUrl":"images/nft.jpg","price":200,"currency":"BTC"},{"name":"DOGE","user":{"avatarUrl":"images/avatar.png","verified":true},"mediaUrl":"images/nft.jpg","price":200,"currency":"BTC"},{"name":"BTC","user":{"avatarUrl":"images/avatar.png","verified":true},"mediaUrl":"images/nft.jpg","price":100,"currency":"BTC"},{"name":"Litecoin","user":{"avatarUrl":"images/avatar.png","verified":true},"mediaUrl":"images/nft.jpg","price":300,"currency":"BTC"}]} />
+  return <Card  timeLeft={151515151} name={"name name"} currency={"eth"} price={123} user={{ "avatarUrl": undefined, "verified": false }}  mediaUrl={"./images/nft.jpg"}/>
 }
