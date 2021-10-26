@@ -7,10 +7,11 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import millify from "millify";
 import Countdown, { zeroPad } from 'react-countdown';
+import clsx from 'clsx';
 
 export default function Card({ name, likes = 0, mediaUrl, user, price, currency, timeLeft }) {
     return (
-        <MUICard className={timeLeft ? classNames(styles.liveCard) : classNames(styles.card)}>
+        <MUICard className={timeLeft ? clsx(styles.liveCard) : classNames(styles.card)} sx={timeLeft ? { backgroundColor: "rgba(36, 242, 94, 0.1)" } : {}}>
             <CardContent>
                 <Avatar verified={user.verified} url={user.avatarUrl} size={30} />
                 <Container disableGutters className={classNames(styles.imgContainer)}>
