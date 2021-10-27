@@ -1,0 +1,10 @@
+@use "../../styles/colors";
+
+.text{
+    color: colors.$text_disabled;
+}
+
+.button{
+    padding: 0;
+    color: colors.$text_primary;
+}
