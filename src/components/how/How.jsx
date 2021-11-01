@@ -19,9 +19,6 @@ export default function How({ description, title, items, link }) {
                     {items.map((el, i) => {
                         return <Step number={i + 1} title={el.title} description={el.description} />
                     })}
-                    {/* <Step />
-                    <Step />
-                    <Step /> */}
                 </Grid>
             </Grid>
         </Container>
