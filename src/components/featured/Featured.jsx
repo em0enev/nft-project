@@ -1,9 +1,9 @@
 import { Container, ImageList, ImageListItem } from "@mui/material";
-import styles from "./Features.module.scss";
+import styles from "./Featured.module.scss";
 import classNames from "classnames";
 import { useRouter } from "next/router";
 
-export default function Featured({ items = {} }) {
+export default function Featured({ items = [] }) {
     const router = useRouter();
 
     return (
@@ -13,7 +13,6 @@ export default function Featured({ items = {} }) {
                 variant="quilted"
                 cols={6}
                 gap={20}
-            // rowHeight={121}
             >
                 {items.map((item) => (
                     <ImageListItem key={item.image} cols={item.cols || 1} rows={item.rows || 1} onClick={() => {
