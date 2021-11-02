@@ -1,7 +1,7 @@
 import { Container, Grid, Button, Typography } from "@mui/material";
-import Step from "../step/Step";
+import HowStep from "./HowStep.jsx";
 
-export default function How({ description, title, items, link }) {
+export default function How({ description, title, items = [], link }) {
     return (
         <Container disableGutters>
             <Grid container sx={{ backgroundColor: "rgb(78,36, 242)", width: "100%", height: "360px", marginY: "30px" }}>
@@ -17,7 +17,7 @@ export default function How({ description, title, items, link }) {
                     sx={{ marginBottom: "-20px", marginTop: "-50px", paddingRight: "75px", alignItems: "flex-end", display: "grid", justifyContent: "flex-end" }}
                 >
                     {items.map((el, i) => {
-                        return <Step number={i + 1} title={el.title} description={el.description} />
+                        return <HowStep key={i} number={i + 1} title={el.title} description={el.description} />
                     })}
                 </Grid>
             </Grid>

@@ -1,3 +1,5 @@
+@use "../../styles/colors";
+
 .card {
     display: flex;
     width: 320px;
@@ -9,6 +11,7 @@
     align-items: center;
     justify-content: center;
     width: 30%;
+    background-color: rgba(colors.$primary_main, 10%);
 }
 
 .number{
