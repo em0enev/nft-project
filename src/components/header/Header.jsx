@@ -8,16 +8,16 @@ import InputAdornment from '@mui/material/InputAdornment';
 export default function Header() {
     return (
         <Grid container
-            sx={{borderTop:" 2px dashed #4e24f2", borderBottom:" 2px dashed #4e24f2", padding: "5px"}}
+            sx={{ backgroundColor: "#181828", height: "80px", alignItems: "center", paddingX: "5%" }}
             direction="row"
-            justifyContent="space-between" >
+            justifyContent="space-between">
             <Grid item xs={2}>
                 <Logo></Logo>
             </Grid>
             <Grid item xs={5}>
-                <TextField fullWidth placeholder="Find items, users and activities" variant="outlined" InputProps={{
+                <TextField  fullWidth placeholder="Find items, users and activities" variant="outlined" InputProps={{                  
                     startAdornment: (
-                        < InputAdornment position="start" >
+                        < InputAdornment position="start" color="secondary" >
                             <SearchIcon color="primary" />
                         </InputAdornment>
                     )
@@ -28,8 +28,8 @@ export default function Header() {
                 justifyContent="flex-end"
                 alignItems="center">
 
-                <Button variant='text'>Home</Button>
-                <Button variant='text'>Activity</Button>
+                <Button variant='text' sx={{color: "white"}}>Home</Button>
+                <Button variant='text' sx={{color: "white"}}>Activity</Button>
                 <Button variant="contained">Explore</Button>
             </Grid>
         </Grid >

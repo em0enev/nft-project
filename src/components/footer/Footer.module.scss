@@ -3,3 +3,11 @@
 .text{
     color: colors.$text_disabled;
 }
+
+.divWrapper{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-color: #181828;
+    margin-top: 50px;
+}

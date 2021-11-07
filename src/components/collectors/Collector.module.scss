@@ -19,10 +19,11 @@ $additional-opacity: 0.15;
 }
 
 .userContainer{
-    align-items: center;
-    justify-content: center;
     display: flex;
+    align-items: center;
+    justify-content: flex-start;
     background-color: rgba( colors.$primary_main, 0.1);
+    padding-left: 10px;
 }
 
 .lightUserContainer {

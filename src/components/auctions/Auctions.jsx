@@ -10,21 +10,19 @@ export default function Auctions({ cards = [] }) {
     }
 
     return (
-        <Container>
+        <Container disableGutters sx={{paddingY: "30px"}}>
             <Grid container
                 direction="row"
                 justifyContent="space-between"
                 alignItems="center"
-                sx={{ marginY: "10px" }}
-            >
+                sx={{ marginY: "10px" }}>
                 <Typography variant="h2">Live Auctions</Typography>
                 <FormControl>
                     <Select
                         sx={{ minWidth: "170px" }}
                         id="time-period"
                         value={period}
-                        onChange={handleChange}
-                    >
+                        onChange={handleChange}>
                         <MenuItem value={"This Week"}>This Week</MenuItem>
                         <MenuItem value={"This Month"}>This Month</MenuItem>
                     </Select>
@@ -33,8 +31,7 @@ export default function Auctions({ cards = [] }) {
             <Grid container
                 direction="row"
                 justifyContent="space-between"
-                alignItems="center"
-            >
+                alignItems="center">
                 {cards.map(card => {
                     return <Card key={card.name} name={card.name} price={card.price} currency={card.currency} user={card.user} mediaUrl={card.mediaUrl} timeLeft={card.timeLeft}></Card>
                 })}

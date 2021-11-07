@@ -10,7 +10,7 @@ export default function Trending({ cards = [] }) {
     }
 
     return (
-        <Container>
+        <Container disableGutters sx={{paddingY: "50px"}}>
             <Grid container
                 direction="row"
                 justifyContent="space-between"
@@ -33,8 +33,7 @@ export default function Trending({ cards = [] }) {
             <Grid container
                 direction="row"
                 justifyContent="space-between"
-                alignItems="center"
-            >
+                alignItems="center">
                 {cards.map(card => {
                     return <Card key={card.name} name={card.name} price={card.price} currency={card.currency} user={card.user} mediaUrl={card.mediaUrl}></Card>
                 })}

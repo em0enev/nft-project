@@ -9,8 +9,8 @@ export default function HowStep({ number, title, description }) {
                 <Typography sx={{ fontSize: "4.5rem" }}>{number}</Typography>
             </Container>
             <Container className={classNames(styles.infoContainer)}>
-                <Typography variant={"h5"} sx={{ fontSize: "0.6rem", marginTop: "20px", marginBottom: "10px" }}>{title}</Typography>
-                <Typography sx={{ fontSize: "0.5rem" }}>{description}</Typography>
+                <Typography variant={"h5"} sx={{ fontSize: "0.8rem", marginTop: "20px", marginBottom: "10px" }}>{title}</Typography>
+                <Typography sx={{ fontSize: "0.7rem" }}>{description}</Typography>
             </Container>
         </Card>
     )
