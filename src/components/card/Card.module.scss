@@ -1,0 +1,68 @@
+@use "../../styles/colors";
+
+.card {
+    max-width: 275px;
+}
+
+.liveCard{
+    max-width: 275px;
+    background-color: mix( #181828, colors.$secondary_main, $weight: 85);
+    color: red;
+}
+
+
+
+.media{
+    position: relative;
+    border-radius: 20px;
+    margin: 20px 0px;
+    width: 250px;
+    height: 250px;
+}
+
+.title{
+    font-weight: bold;
+}
+
+.price{
+    position: relative;
+    top: -5px;
+    color: colors.$secondary_main;
+}
+
+.likes{
+    padding: 15px;
+}
+
+.timer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: colors.$success_main;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    position: absolute;
+    width: inherit;
+    top: 85%;
+    height: 15%;
+    color: black;
+    font-weight: bold;
+}
+
+.imgContainer{
+    position: relative;
+}
+
+.badge{
+    font-size: 13px;
+    font-weight: bold;
+    background: colors.$success_main;
+    color: black;
+    border-radius: 5px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}

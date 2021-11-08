@@ -1,0 +1,28 @@
+@use "../../styles/colors";
+
+.name{
+    position: relative;
+    top: 2.5px;
+    font-weight: bolder;
+    font-size: 0.8rem;
+    margin: 0px 10px;
+}
+
+.info{
+    position: relative;
+    top: -2.5px;
+    margin: 0px 10px;
+    color: colors.$info_main;
+    font-size: 0.8rem;
+
+}
+
+.user{
+    display: inline-flex;
+}
+
+.infoContainer{
+    display: grid;
+    align-items: center;
+    font-weight: bold;
+}
