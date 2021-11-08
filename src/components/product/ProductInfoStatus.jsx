@@ -5,7 +5,7 @@ import styles from "./ProductInfoStatus.module.scss"
 export default function ProductInfoStatus() {
     return (
         <div className={classNames(styles["product-info-status"])}>
-            <Chip component="div" label="LIVE" className={classNames(styles.status)} sx={{ color: "black" }} />
+            <Chip label="LIVE" className={classNames(styles.status)} sx={{ color: "black" }} />
         </div>
     )
 }
