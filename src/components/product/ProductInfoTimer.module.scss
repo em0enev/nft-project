@@ -1,0 +1,28 @@
+@use "../../styles/colors";
+
+.title{
+    font-weight: bold;
+    color: rgb(24, 24, 40);
+}
+
+.product-info-timer{
+    width: 300px;
+    height: 120px;
+
+}
+
+.title-container {
+    display: flex;
+    justify-content: center;
+    opacity: 0.8;
+}
+
+.timer{
+    font-weight: bold;
+    color: rgb(24, 24, 40);
+    font-size: 2.5rem;
+}
+
+.active {
+    background-color: colors.$secondary_main;
+}
