@@ -8,15 +8,16 @@ export default function ProductInfoTimer({ timeEnd, onTimeEnd }) {
         <div className={classNames(styles["product-info-timer"])}>
             <Card>
                 <Container disableGutters className={classNames(styles["title-container"], timeEnd ? styles.active : "")} sx={{ padding: "3% 10%", display: "flex", justifyContent: "center" }}>
-                    <Typography className={classNames(styles.title)} variant="h5">ends in</Typography>
+                    <Typography className={classNames(styles.title)} variant="h5">ENDS IN</Typography>
                 </Container>
-                <Container disableGutters className={classNames(styles.timer, timeEnd ? styles.active : styles.timer)} sx={{ padding: "3% 10%;", display: "flex", justifyContent: "center" }}>
+                <div className={classNames(styles.timer, timeEnd ? styles.active : "")}>
                     {timeEnd && <Countdown
                         onComplete={onTimeEnd}
                         date={Date.now()} // add timeleft
-                        renderer={props => <div>{zeroPad(props.hours)}:{zeroPad(props.minutes)}:{zeroPad(props.seconds)}</div>} />}
-                </Container>
+                        renderer={props => <div>{zeroPad(props.hours)}: {zeroPad(props.minutes)}: {zeroPad(props.seconds)}</div>} />}
+                </div>
             </Card>
         </div >
     )
 }
+
