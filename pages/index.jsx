@@ -1,6 +1,6 @@
 
-import ProductInfo from '../src/components/product/ProductInfo.jsx';
+import ProductTabs from '../src/components/product/ProductTabs.jsx';
 
 export default function Index() {
-  return <ProductInfo title={"John"} creator={{"name":"George","avatar":"https://nft-auction.herokuapp.com/uploads/0xa6dbe6b4f8e2905c26e123ec6fd08a8f7200dbc1_64120a76f4.jpg","verified":true}} price={20} currency={"ETH"} likes={20} timeEnd={"2022-09-02T20:43:19.149Z"} isLive={true} />
+  return <ProductTabs bids={[{"user":{"avatar":"/images/avatar.png","name":"hrisi","verified":true},"amount":30,"date":"2021-10-22T08:29:23.382Z"},{"user":{"avatar":"/images/avatar.png","name":"maxi","verified":true},"amount":1000,"date":"2021-10-22T08:29:23.382Z"}]} />
 }
