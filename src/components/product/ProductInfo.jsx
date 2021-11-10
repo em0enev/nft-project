@@ -15,7 +15,7 @@ export default function ProductInfo({ title, creator, price, currency, likes, on
             <ProductInfoTitle text={title}></ProductInfoTitle>
             <div className={classNames(styles["price-container"])}>
                 <ProductInfoPrice amount={price} currency={currency}></ProductInfoPrice>
-                <Stack direction="row" spacing={1} className={classNames(styles.stats)}>
+                <Stack className={classNames(styles.stats)} direction="row" spacing={1} >
                     {isLive && <ProductInfoStatus></ProductInfoStatus>}
                     <ProductInfoLikes amount={likes}></ProductInfoLikes>
                 </Stack>
