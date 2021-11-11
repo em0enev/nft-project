@@ -1,0 +1,15 @@
+@use "../../styles/colors";
+
+.product-info-status{
+    // background-color: colors.$secondary_main;
+    display: inline;
+    // padding-top: 3px;
+    // padding-bottom: 3px;
+}
+
+.status{
+    background-color: colors.$secondary_main;
+    font-weight: bold;
+    color: black;
+    border-radius: 5px;
+}

@@ -1,0 +1,27 @@
+@use "../../styles/colors";
+
+.title-container{
+    height: 45px;
+    display: flex;
+    align-items: center;
+}
+
+.title{
+    font-weight: bold;
+}
+
+.product-info-creator{
+    width: 100%;
+}
+
+.user-container{
+    display: flex;
+    align-items: center;
+    padding: 7% 10%;
+    height: 90px;
+}
+
+.card{
+    height: 135px;
+}
+
