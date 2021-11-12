@@ -3,7 +3,7 @@ import classNames from "classnames";
 import styles from "./ProductActions.module.scss"
 import Button from '@mui/material/Button';
 
-export default function ProductAction({ isLive, currency, buyAmount, bidAmount, onBuy, onBid }) {
+export default function ProductActions({ isLive, currency, buyAmount, bidAmount, onBuy, onBid }) {
     return (
         <div className={classNames(styles["product-action"])}>
             <Grid container spacing={2}>
