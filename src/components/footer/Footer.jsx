@@ -8,7 +8,7 @@ export default function Footer() {
         <div className={classNames(styles.divWrapper)}>
             <Grid
                 container
-                maxWidth="lg"
+               
                 direction="row"
                 justifyContent="space-between"
                 alignItems="center"
