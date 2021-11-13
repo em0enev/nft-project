@@ -1,6 +1,6 @@
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button'
-import Logo from '../logo/logo';
+import Logo from '../logo/Logo.jsx';
 import TextField from '@mui/material/TextField';
 import SearchIcon from '@mui/icons-material/Search';
 import InputAdornment from '@mui/material/InputAdornment';

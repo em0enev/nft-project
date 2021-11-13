@@ -15,7 +15,7 @@ export default function ProductContainer({ name, owner, price, currency, likes, 
     useEffect(() => {
         setIsLive(Date.now() <= parseISO(auction_end))
     }, [])
-
+  
     return (
         <div className={classNames(styles["product-container"])}>
             <Grid container spacing={10} xs={1} sx={{ maxWidth: "100%" }}>

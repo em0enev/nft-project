@@ -14,7 +14,7 @@ export default function ProductInfoTimer({ timeEnd, onTimeEnd }) {
                     {timeEnd && <Countdown
                         onComplete={onTimeEnd}
                         date={Date.now()} // add timeleft
-                        renderer={props => <div>{zeroPad(props.hours)}: {zeroPad(props.minutes)}: {zeroPad(props.seconds)}</div>} />}
+                        renderer={props => <div>{zeroPad(props.hours)}:{zeroPad(props.minutes)}:{zeroPad(props.seconds)}</div>} />}
                 </div>
             </Card>
         </div >
