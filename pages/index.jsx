@@ -1,6 +1,6 @@
 
-import ProductContainer from '../src/components/product/ProductContainer.jsx';
+import Hero from '../src/components/hero/Hero.jsx';
 
 export default function Index() {
-  return <div></div>
+  return <Hero text={"Lorem Ipsum 123"} />
 }
