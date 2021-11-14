@@ -4,7 +4,7 @@ import { FormControl, InputAdornment, InputLabel, MenuItem, Select, Stack, TextF
 import SearchIcon from '@mui/icons-material/Search';
 import { useEffect, useState } from "react";
 
-export default function ProfileCollection({ filters }) {
+export default function ProfileCollectionFilters({ filters }) {
 
     const [sortBy, setSortBy] = useState("")
     const [timePeriod, setTimePeriod] = useState("")
@@ -23,7 +23,7 @@ export default function ProfileCollection({ filters }) {
                 direction="row"
                 justifyContent="flex-end"
                 alignItems="center"
-                spacing={3}>
+                spacing={1}>
                 <FormControl sx={{width: "220px"}}>
                     <InputLabel id="sort-by-label">{"Sort by"}</InputLabel>
                     <Select
@@ -32,7 +32,7 @@ export default function ProfileCollection({ filters }) {
                         value={sortBy}
                         onChange={handleSortBy}>
                         {filters.sort.map(el => {
-                             return <MenuItem value={el.value}>{el.label}</MenuItem>
+                             return <MenuItem key={el.label} value={el.value}>{el.label}</MenuItem>
                         })}
                     </Select>
                 </FormControl>
@@ -44,7 +44,7 @@ export default function ProfileCollection({ filters }) {
                         value={timePeriod}
                         onChange={handleTimePeriod}>
                         {filters.price.map(el => {
-                             return <MenuItem value={el.value}>{el.label}</MenuItem>
+                             return <MenuItem key={el.label} value={el.value}>{el.label}</MenuItem>
                         })}
                     </Select>
                 </FormControl>
