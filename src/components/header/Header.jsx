@@ -15,7 +15,7 @@ export default function Header() {
                 <Logo></Logo>
             </Grid>
             <Grid item xs={5}>
-                <TextField  fullWidth placeholder="Find items, users and activities" variant="outlined" InputProps={{                  
+                <TextField  fullWidth placeholder="Find items, users and activities" sx={{ div: { backgroundColor: 'rgb(24, 24,40)' } }}  variant="outlined" InputProps={{                  
                     startAdornment: (
                         < InputAdornment position="start" color="secondary" >
                             <SearchIcon color="primary" />
