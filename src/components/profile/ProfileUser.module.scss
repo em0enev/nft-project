@@ -1,0 +1,17 @@
+@use "../../styles/colors";
+
+.profile-user{
+    // width: 100%;
+    display: grid;
+    justify-items: center;
+}
+
+.name{
+    padding: 20px 0;
+}
+
+.info {
+    width: 35%;
+    text-align: center;
+    color: colors.$text_secondary;
+}
