@@ -1,24 +1,23 @@
 import classNames from "classnames";
-import styles from "./ProfileCollectionFilters.module.scss"
+import styles from "./ActivityFilters.module.scss"
 import { FormControl, InputAdornment, InputLabel, MenuItem, Select, Stack, TextField } from "@mui/material";
-import SearchIcon from '@mui/icons-material/Search';
-import { useState } from "react";
+import SearchIcon from '@mui/icons-material/Search'
+import { useState } from "react"
 
-export default function ProfileCollectionFilters({ filters }) {
-
+export default function ActivityFilters({ filters }) {
     const [sortBy, setSortBy] = useState("")
-    const [timePeriod, setTimePeriod] = useState("")
+    const [type, setType] = useState("")
 
     const handleSortBy = (event) => {
         setSortBy(event.target.value)
     }
 
     const handleTimePeriod = (event) => {
-        setTimePeriod(event.target.value)
+        setType(event.target.value)
     }
 
     return (
-        <div className={classNames(styles['profile-collection-filters'])}>
+        <div className={classNames(styles['activity-filters'])}>
             <Stack
                 direction="row"
                 justifyContent="flex-end"
@@ -37,13 +36,13 @@ export default function ProfileCollectionFilters({ filters }) {
                     </Select>
                 </FormControl>
                 <FormControl sx={{ width: "220px" }}>
-                    <InputLabel id="price-range-label">{"Price range"}</InputLabel>
+                    <InputLabel id="type-label">{"Type"}</InputLabel>
                     <Select
-                        labelId="price-range-label"
+                        labelId="type-label"
                         sx={{ minWidth: "170px" }}
-                        value={timePeriod}
+                        value={type}
                         onChange={handleTimePeriod}>
-                        {filters.price.map(el => {
+                        {filters.type.map(el => {
                             return <MenuItem key={el.label} value={el.value}>{el.label}</MenuItem>
                         })}
                     </Select>
