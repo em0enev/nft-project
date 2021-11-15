@@ -1,0 +1,36 @@
+.card{
+    display: flex;
+    width: 940px;
+    height: 105px;
+}
+
+.avatar {
+    width: 125px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.link{
+    color: #24F25E;
+}
+
+.info{
+    display: grid;
+    align-content: center;
+    color: #E1E1FC;
+}
+
+.action-info{
+    margin-top: 29px;
+    margin-bottom: 0;
+}
+
+.time{
+    margin-top: 0;
+    margin-bottom: 27px;
+}
+
+.action-info strong{
+    color: #ffffff
+}
