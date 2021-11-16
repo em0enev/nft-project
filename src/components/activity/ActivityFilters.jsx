@@ -20,7 +20,6 @@ export default function ActivityFilters({ filters }) {
         <div className={classNames(styles['activity-filters'])}>
             <Stack
                 direction="row"
-                justifyContent="flex-end"
                 alignItems="center"
                 spacing={1}>
                 <FormControl sx={{ width: "220px" }}>
