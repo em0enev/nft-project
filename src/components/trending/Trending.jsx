@@ -35,7 +35,7 @@ export default function Trending({ cards = [] }) {
                 justifyContent="space-between"
                 alignItems="center">
                 {cards.map(card => {
-                    return <Card key={card.name} name={card.name} price={card.price} currency={card.currency} user={card.user} mediaUrl={card.mediaUrl}></Card>
+                    return <Card key={card.name} name={card.name} price={card.price} currency={card.currency} user={card.owner} mediaUrl={card.mediaUrl}></Card>
                 })}
             </Grid>
         </Container >
