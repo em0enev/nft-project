@@ -22,17 +22,17 @@ export default function Explore() {
                         <ExploreFilters filters={filtersData} />
                     </Grid>
                 </Grid>
-                <Grid container rowSpacing={2} sx={{marginTop: "60px"}}>
+                <Grid container rowSpacing={2} sx={{ marginTop: "60px" }}>
                     {nftsData.map(el => {
                         const user = nftsData.map(el => {
                             return {
-                                "avatarUrl" : el.owner.avatar.url,
-                                "verified" : false
+                                "avatarUrl": el.owner.avatar.url,
+                                "verified": false
                             }
                         })
                         return (
                             <Grid item xs={3}>
-                                <Card name={el.name} price={el.price} currency={el.currency} mediaUrl={el.source.url} user={user}/>
+                                <Card name={el.name} price={el.price} currency={el.currency} mediaUrl={el.source.url} user={user} />
                             </Grid>
                         )
                     })}
