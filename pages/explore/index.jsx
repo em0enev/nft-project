@@ -1,10 +1,10 @@
-import Header from './../../src/components/header/Header.jsx'
-import Footer from './../../src/components/footer/Footer.jsx'
-import ExploreTitle from './../../src/components/explore/ExploreTitle.jsx'
-import ExploreFilters from './../../src/components/explore/ExploreFilters.jsx'
-import Card from './../../src/components/card/Card.jsx'
-import nftsData from './../../src/data/nfts.json'
-import filtersData from './../../src/data/filtersExplore.json'
+import Header from '../../src/components/header/Header.jsx'
+import Footer from '../../src/components/footer/Footer.jsx'
+import ExploreTitle from '../../src/components/explore/ExploreTitle.jsx'
+import ExploreFilters from '../../src/components/explore/ExploreFilters.jsx'
+import Card from '../../src/components/card/Card.jsx'
+import nftsData from '../../src/data/nfts.json'
+import filtersData from '../../src/data/filtersExplore.json'
 import { Container, Grid } from '@mui/material'
 import classNames from "classnames";
 import styles from "./index.module.scss"

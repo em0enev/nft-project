@@ -3,23 +3,21 @@ import styles from "./Featured.module.scss";
 import classNames from "classnames";
 import { useRouter } from "next/router";
 
+
 export default function Featured({ items = [] }) {
     const router = useRouter();
 
     return (
-        <Container disableGutters sx={{paddingY: "50px"}}>
+        <Container disableGutters sx={{ paddingY: "50px" }}>
             <ImageList
                 sx={{ width: "100%" }}
                 variant="quilted"
                 cols={6}
                 rowHeight={150}
                 gap={20}>
-                {items.map((item) => (
-                    <ImageListItem key={item.image} cols={item.cols} rows={item.rows} onClick={() => {
-                        router.push(item.image)
-                    }}>
-                        <img src={item.image} className={classNames(styles.image)}
-                        />
+                {items.map((item, i) => (
+                    <ImageListItem key={item.id} cols={i === 0 ? 3 : 1} rows={i === 0 ? 2 : 1} onClick={() => { router.push(`/product/${item.id}`) }}>
+                        <img src={item.image} className={classNames(styles.image)} />
                     </ImageListItem>
                 ))}
             </ImageList>
