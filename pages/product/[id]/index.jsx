@@ -8,29 +8,8 @@ import ProductContainer from '../../../src/components/product/ProductContainer.j
 
 
 export default function index() {
-    // const [nfts, setNfts] = useState([])
-
     const router = useRouter()
     const { id } = router.query
-
-    // useEffect(() => {
-    //     setNfts(dataNfts.map((el) => {
-    //         return {
-    //             "id": el.id,
-    //             "name": el.name,
-    //             "user": {
-    //                 "avatarUrl": el.owner.avatar.url,
-    //                 "verified": el.owner.verified
-    //             },
-    //             "mediaUrl": el.source.url,
-    //             "price": el.price,
-    //             "currency": el.currency,
-    //             "timeLeft": 3.6e6
-    //         }
-    //     }))
-
-    // }, [])
-
 
     const nft = dataNfts.find(x => {
         return x.id === Number(id)
