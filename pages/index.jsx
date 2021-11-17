@@ -4,7 +4,7 @@ import Featured from '../src/components/featured/Featured.jsx';
 import { useState, useEffect } from 'react'
 
 export default function Index() {
-  const [featuredCards, setFeaturedCards] = useState(null);
+  const [featuredCards, setFeaturedCards] = useState([]);
 
   useEffect(() => {
     fetchData();
@@ -12,14 +12,13 @@ export default function Index() {
     async function fetchData() {
       const res = await fetch(`${process.env.apiUrl}/featured`);
       const data = await res.json();
-      setFeaturedCards(data.nfts)
+      setFeaturedCards(data)
     }
   }, []);
 
   return (
     <div>
-      {featuredCards && < Featured items={featuredCards} />}
+      {featuredCards && < Featured items={featuredCards.nfts} />}
     </div>
   )
-
 }
