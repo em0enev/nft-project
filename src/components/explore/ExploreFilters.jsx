@@ -8,7 +8,7 @@ import { useState } from "react"
 export default function ExploreFilters({ filters }) {
     const [sortBy, setSortBy] = useState("")
     const [price, setPrice] = useState("")
-    console.log(filters)
+
     const handleSortBy = (event) => {
         setSortBy(event.target.value)
     }

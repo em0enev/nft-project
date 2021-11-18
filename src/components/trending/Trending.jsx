@@ -10,21 +10,19 @@ export default function Trending({ cards = [] }) {
     }
 
     return (
-        <Container disableGutters sx={{paddingY: "50px"}}>
+        <Container disableGutters sx={{ paddingY: "50px" }}>
             <Grid container
                 direction="row"
                 justifyContent="space-between"
                 alignItems="center"
-                sx={{ marginY: "10px" }}
-            >
+                sx={{ marginY: "10px" }}>
                 <Typography variant="h2">Trending</Typography>
                 <FormControl>
                     <Select
                         sx={{ minWidth: "170px" }}
                         id="time-period"
                         value={period}
-                        onChange={handleChange}
-                    >
+                        onChange={handleChange}>
                         <MenuItem value={"This Week"}>This Week</MenuItem>
                         <MenuItem value={"This Month"}>This Month</MenuItem>
                     </Select>
@@ -41,3 +39,4 @@ export default function Trending({ cards = [] }) {
         </Container >
     );
 }
+//TODO: add filters as prop 
