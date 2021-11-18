@@ -7,7 +7,7 @@ export default function CollectorColumn({ items = [] }) {
     return (
         <Card className={classNames(styles.card)}>
             {items.map((el, i) => {
-                return <Collector key={el.id} name={el.name} avatar={el.avatar} verified={el.verified} nftsCount={el.nftsCount} number={el.id} type={(i + 1) % 2 === 0 ? "light" : ""} />
+                return <Collector key={el.id} name={el.name} avatar={el.avatar} verified={el.verified} nftsCount={el.nftsCount} number={el.number} type={(i + 1) % 2 === 0 ? "light" : ""} />
             })}
         </Card>
     );

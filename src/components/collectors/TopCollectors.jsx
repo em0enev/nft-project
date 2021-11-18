@@ -1,30 +1,28 @@
-import { Container, FormControl, Grid, MenuItem, Select, Typography } from "@mui/material";
-import {  useState } from "react";
+import { Container, FormControl, Grid, InputLabel, MenuItem, Select, Typography } from "@mui/material";
+import { useState } from "react";
 import _ from "lodash"
 import CollectorColumn from "./CollectorColumn";
 import styles from "./TopCollectors.module.scss";
 import classNames from "classnames";
 
-export default function TopCollectors({ collectors = [] }) {
-    const [period, setPeriod] = useState("This Week")
+export default function TopCollectors({ collectors = [], filters = [] }) {
+    const [sortBy, setSortBy] = useState("")
 
-    let collectorsWithId = collectors.map((el, i) => {
-        return ({
-            ...el,
-            "id": i
-        })
+    let collectorsDescOrder = collectors.sort((first, second) => {
+        return first > second
     })
 
-    collectorsWithId = _.chunk(collectorsWithId, 3)
+    collectorsDescOrder.map(x => x.number = collectorsDescOrder.indexOf(x))
+
+    collectorsDescOrder = _.chunk(collectorsDescOrder, 3)
 
     const handleChange = (event) => {
-        setPeriod(event.target.value)
+        setSortBy(event.target.value)
     }
-
 
     return (
         <div className={classNames(styles.divWrapper)}>
-            <Container disableGutters maxWidth="lg" sx={{paddingY: "100px"}}>
+            <Container disableGutters maxWidth="lg" sx={{ paddingY: "100px" }}>
                 <Grid container
                     direction="row"
                     justifyContent="space-between"
@@ -32,13 +30,15 @@ export default function TopCollectors({ collectors = [] }) {
                     sx={{ marginY: "10px" }}>
                     <Typography variant="h2">Top Collectors</Typography>
                     <FormControl>
+                        <InputLabel id="sort-by-label">{"Sort by"}</InputLabel>
                         <Select
                             sx={{ minWidth: "170px" }}
-                            id="time-period"
-                            value={period}
+                            labelId="sort-by-label"
+                            value={sortBy}
                             onChange={handleChange}>
-                            <MenuItem value={"This Week"}>This Week</MenuItem>
-                            <MenuItem value={"This Month"}>This Month</MenuItem>
+                            {filters.map((el, i) => {
+                                return <MenuItem key={i} value={el.value}>{el.label}</MenuItem>
+                            })}
                         </Select>
                     </FormControl>
                 </Grid >
@@ -46,7 +46,7 @@ export default function TopCollectors({ collectors = [] }) {
                     direction="row"
                     justifyContent="space-between"
                     alignItems="center">
-                    {collectorsWithId && collectorsWithId.map((el, i) => {
+                    {collectorsDescOrder && collectorsDescOrder.map((el, i) => {
                         return <CollectorColumn items={el} key={i} />
                     })}
                 </Grid>

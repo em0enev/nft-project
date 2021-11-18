@@ -10,7 +10,7 @@ export default function Collector({ name, nftsCount, avatar, verified, id, numbe
                 <Typography sx={{ fontSize: "2.5rem" }}>{number + 1}</Typography>
             </Container>
             <Container disableGutters className={classNames(styles.userContainer, type ? styles.lightUserContainer : "")} sx={{ display: "flex" }}>
-                <User key={id} avatar={avatar} verified={verified} name={name} info={nftsCount + " items"} />
+                <User key={id} avatar={avatar.url} verified={verified} name={name} info={nftsCount + " items"} />
             </Container>
         </Container>
     );
