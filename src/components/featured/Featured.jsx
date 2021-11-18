@@ -8,12 +8,12 @@ export default function Featured({ items = [] }) {
     const router = useRouter();
 
     return (
-        <Container disableGutters sx={{ paddingY: "50px" }}>
+        <Container disableGutters sx={{ paddingY: "75px" }} maxWidth="xl">
             <ImageList
                 sx={{ width: "100%" }}
                 variant="quilted"
                 cols={6}
-                rowHeight={150}
+                rowHeight={225}
                 gap={20}>
                 {items.map((item, i) => (
                     <ImageListItem key={item.id} cols={i === 0 ? 3 : 1} rows={i === 0 ? 2 : 1} onClick={() => { router.push(`/product/${item.id}`) }}>
