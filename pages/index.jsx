@@ -28,7 +28,7 @@ export default function Index() {
       const res = await fetch(`${process.env.apiUrl}/trending`);
       const data = await res.json();
       setTrendingItems(data.nfts)
-      setTrendingFilters(data.filters)
+      setTrendingFilters(data.filters.sort)
     }
 
     async function fetchTopCollectorsData() {
@@ -43,7 +43,7 @@ export default function Index() {
     <div>
       <Header />
       {featuredCards && < Featured items={featuredCards.nfts} />}
-      {trendingItems && <Trending cards={trendingItems} />}
+      {trendingItems && trendingFilters && <Trending cards={trendingItems} filters={trendingFilters} />}
       {collectors && collectorFilters && <TopCollectors collectors={collectors.slice(0, 12)} filters={collectorFilters} />}
     </div>
   )

@@ -1,9 +1,8 @@
 @use "../../styles/colors";
 
 .card {
-    max-width: 275px;
-    // width: 334px;
-    // height: 443px;
+    width: 334px;
+    height: 443px;
 }
 
 .liveCard{
@@ -19,7 +18,7 @@
     border-radius: 20px;
     margin: 20px 0px;
     width: 250px;
-    height: 250px;
+    height: 285px;
 }
 
 .title{
@@ -33,7 +32,11 @@
 }
 
 .likes{
+    box-sizing: border-box;
     padding: 15px;
+    width: 70px;
+    height: 33px;
+    border: 2px solid
 }
 
 .timer{
