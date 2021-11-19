@@ -20,7 +20,7 @@ export default function Card({ name, likes = 0, mediaUrl, user, price, currency,
                         image={mediaUrl}
                         alt="card media"
                         className={classNames(styles.media)} />
-                    {timeLeft && <Box className={classNames(styles.badge)} sx={{  }}>LIVE</Box>}
+                    {timeLeft && <Box className={classNames(styles.badge)}>LIVE</Box>}
                     {timeLeft && <Countdown date={Date.now() + timeLeft} renderer={props => <div className={classNames(styles.timer)}>{zeroPad(props.hours)}:{zeroPad(props.minutes)}:{zeroPad(props.seconds)}</div>} />}
                 </Container>
                 <Grid

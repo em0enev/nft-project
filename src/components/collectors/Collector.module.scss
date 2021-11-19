@@ -1,16 +1,15 @@
 @use "../../styles/colors";
-$additional-opacity: 0.15;
 
 .container {
     width: 320px;
-    height: 30%;
+    height: 76px;
 }
 
 .numberContainer {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 30%;
+    width: 76px;
     background-color: rgba(colors.$primary_main, 0.25);
 }
 

@@ -2,10 +2,10 @@
 
 .name{
     position: relative;
-    top: 2.5px;
     font-weight: bolder;
     font-size: 0.8rem;
     margin: 0px 10px;
+    font-weight: 800;
 }
 
 .info{
@@ -14,7 +14,7 @@
     margin: 0px 10px;
     color: colors.$info_main;
     font-size: 0.8rem;
-
+    font-weight: bold;
 }
 
 .user{
@@ -23,6 +23,6 @@
 
 .infoContainer{
     display: grid;
-    align-content: center;
+    align-items: center;
     font-weight: bold;
 }

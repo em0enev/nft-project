@@ -22,17 +22,17 @@ export default function TopCollectors({ collectors = [], filters = [] }) {
 
     return (
         <div className={classNames(styles.divWrapper)}>
-            <Container disableGutters maxWidth="lg" sx={{ paddingY: "100px" }}>
+            <Container disableGutters maxWidth="xl" sx={{ paddingY: "70px" }}>
                 <Grid container
                     direction="row"
                     justifyContent="space-between"
                     alignItems="center"
-                    sx={{ marginY: "10px" }}>
+                    sx={{ marginBottom: "40px" }}>
                     <Typography variant="h2">Top Collectors</Typography>
-                    <FormControl>
-                        <InputLabel id="sort-by-label">{"Sort by"}</InputLabel>
+                    <FormControl >
+                        <InputLabel sx={{ paddingLeft: "12px" }} id="sort-by-label">Sort by</InputLabel>
                         <Select
-                            sx={{ minWidth: "170px" }}
+                            className={classNames(styles["select-menu"])}
                             labelId="sort-by-label"
                             value={sortBy}
                             onChange={handleChange}>
