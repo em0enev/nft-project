@@ -1,30 +1,33 @@
-import { Container, FormControl, Grid, MenuItem, Select, Typography } from "@mui/material";
+import { Container, FormControl, Grid, InputLabel, MenuItem, Select, Typography } from "@mui/material";
 import { useState } from "react";
 import Card from '../card/Card';
 
-export default function Auctions({ cards = [] }) {
-    const [period, setPeriod] = useState("This Week")
+
+export default function Auctions({ cards = [], filters = [] }) {
+    const [priceRange, setPriceRange] = useState("")
 
     const handleChange = (event) => {
-        setPeriod(event.target.value)
+        setPriceRange(event.target.value)
     }
 
     return (
-        <Container disableGutters sx={{paddingY: "30px"}}>
+        <Container disableGutters sx={{ paddingY: "30px" }} maxWidth="xl">
             <Grid container
                 direction="row"
                 justifyContent="space-between"
                 alignItems="center"
-                sx={{ marginY: "10px" }}>
-                <Typography variant="h2">Live Auctions</Typography>
+                sx={{ marginY: "50px" }}>
+                <Typography variant="h2">🔥 Live Auctions</Typography>
                 <FormControl>
+                    <InputLabel sx={{ paddingLeft: "12px" }} id="price-range-label">Price range</InputLabel>
                     <Select
-                        sx={{ minWidth: "170px" }}
-                        id="time-period"
-                        value={period}
+                        sx={{ width: "220px" }}
+                        labelId="price-range-label"
+                        value={priceRange}
                         onChange={handleChange}>
-                        <MenuItem value={"This Week"}>This Week</MenuItem>
-                        <MenuItem value={"This Month"}>This Month</MenuItem>
+                        {filters.map(el => {
+                            return <MenuItem key={el.value} value={el.value}>{el.label}</MenuItem>
+                        })}
                     </Select>
                 </FormControl>
             </Grid >
@@ -33,7 +36,7 @@ export default function Auctions({ cards = [] }) {
                 justifyContent="space-between"
                 alignItems="center">
                 {cards.map(card => {
-                    return <Card key={card.name} name={card.name} price={card.price} currency={card.currency} user={card.user} mediaUrl={card.mediaUrl} timeLeft={card.timeLeft}></Card>
+                    return <Card key={card.name} name={card.name} likes={card.likes} price={card.price} currency={card.currency} user={card.owner} mediaUrl={card.mediaUrl} timeLeft={card.auction_end}></Card>
                 })}
             </Grid>
         </Container >

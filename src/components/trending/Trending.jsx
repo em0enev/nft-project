@@ -33,10 +33,9 @@ export default function Trending({ cards = [], filters = [] }) {
                 justifyContent="space-between"
                 alignItems="center">
                 {cards.map(card => {
-                    return <Card timeLeft={23132} key={card.name} name={card.name} price={card.price} currency={card.currency} likes={card.likes} user={card.owner} mediaUrl={card.mediaUrl}></Card>
+                    return <Card key={card.name} name={card.name} price={card.price} currency={card.currency} likes={card.likes} user={card.owner} mediaUrl={card.mediaUrl}></Card>
                 })}
             </Grid>
         </Container >
     );
 }
-//TODO: add filters as prop

@@ -21,7 +21,9 @@ export default function Card({ name, likes = 0, mediaUrl, user, price, currency,
                         alt="card media"
                         className={classNames(styles.media)} />
                     {timeLeft && <Box className={classNames(styles.badge)}>LIVE</Box>}
-                    {timeLeft && <Countdown date={Date.now() + timeLeft} renderer={props => <div className={classNames(styles.timer)}>{zeroPad(props.hours)}:{zeroPad(props.minutes)}:{zeroPad(props.seconds)}</div>} />}
+                    {timeLeft && <Countdown date={timeLeft} daysInHours={true} renderer={props => {
+                        return <div className={classNames(styles.timer)}>{zeroPad(props.formatted.hours)}:{zeroPad(props.formatted.minutes)}:{zeroPad(props.formatted.seconds)}</div>
+                    }} />}
                 </Container>
                 <Grid
                     container
@@ -29,13 +31,13 @@ export default function Card({ name, likes = 0, mediaUrl, user, price, currency,
                     justifyContent="space-between"
                     alignItems="center" >
                     <Grid item>
-                        <Typography className={classNames(styles.title)} sx={{fontWeight: "bold", marginBottom: "5px"}}>{name}</Typography>
-                        <Typography className={classNames(styles.price)} sx={{fontWeight: "bold"}}>~{price} {currency}</Typography>
+                        <Typography className={classNames(styles.title)} sx={{ fontWeight: "bold", marginBottom: "5px" }}>{name}</Typography>
+                        <Typography className={classNames(styles.price)} sx={{ fontWeight: "bold" }}>~{price} {currency}</Typography>
                     </Grid>
                     <Chip variant="outlined"
                         color="success"
                         size="small"
-                        sx={{ height: "33px", border: "2px solid", fontWeight: "bold", background:"rgba(36, 242, 94, 0.1)" }}
+                        sx={{ height: "33px", border: "2px solid", fontWeight: "bold", background: "rgba(36, 242, 94, 0.1)" }}
                         icon={<FavoriteIcon />}
                         label={millify(likes)}
                         onClick={() => { }}
