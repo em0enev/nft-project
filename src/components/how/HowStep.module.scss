@@ -2,24 +2,19 @@
 
 .card {
     display: flex;
-    width: 75%;
-    height: 120px;
+    width: 580px;
+    height: 215px;
 }
 
 .numberContainer{
-    display: flex;
     align-items: center;
     justify-content: center;
-    width: 30%;
     background-color: rgba(colors.$primary_main, 10%);
+    font-weight: bold;
 }
 
-.number{
-    font-size: 4.5rem;
-}
-
-.infoCotaniner{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.infoContainer{
+    display: grid;
+    gap: 15px;
+    margin: auto 30px;
 }

@@ -1,17 +1,18 @@
-import { Card, Typography, Container } from '@mui/material/';
+import { Card, Typography, Container, Grid } from '@mui/material/';
 import styles from "./HowStep.module.scss";
 import classNames from "classnames";
 
 export default function HowStep({ number, title, description }) {
     return (
         <Card className={classNames(styles.card)}>
-            <Container sx={{ display: "flex", width: "30%" }} className={classNames(styles.numberContainer)}>
-                <Typography sx={{ fontSize: "4.5rem" }}>{number}</Typography>
+            <Container sx={{ width: "35%", display: "flex" }} className={classNames(styles.numberContainer)}>
+                <Typography sx={{ fontSize: "100px" }} fontWeight="bold">{number}</Typography>
             </Container>
-            <Container className={classNames(styles.infoContainer)}>
-                <Typography variant={"h5"} sx={{ fontSize: "0.8rem", marginTop: "20px", marginBottom: "10px" }}>{title}</Typography>
-                <Typography sx={{ fontSize: "0.7rem" }}>{description}</Typography>
+            <Container sx={{ display: "grid" }} className={classNames(styles.infoContainer)}>
+                <Typography variant={"h5"} >{title.toUpperCase()}</Typography>
+                <Typography color="textSecondary" sx={{ opacity: "0.7" }} font>{description}</Typography>
             </Container>
         </Card>
     )
 }
+

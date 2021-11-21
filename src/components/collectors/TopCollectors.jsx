@@ -22,7 +22,7 @@ export default function TopCollectors({ collectors = [], filters = [] }) {
 
     return (
         <div className={classNames(styles.divWrapper)}>
-            <Container disableGutters maxWidth="xl" sx={{ paddingY: "70px" }}>
+            <Container disableGutters maxWidth="xl" sx={{ paddingY: "110px" }}>
                 <Grid container
                     direction="row"
                     justifyContent="space-between"

@@ -3,8 +3,11 @@ import ExploreFilters from '../src/components/explore/ExploreFilters.jsx';
 import Featured from '../src/components/featured/Featured.jsx';
 import Trending from '../src/components/trending/Trending.jsx';
 import TopCollectors from '../src/components/collectors/TopCollectors.jsx'
-import Auctions from '../src/components/auctions/Auctions.jsx' 
+import Auctions from '../src/components/auctions/Auctions.jsx'
 import Header from '../src/components/header/Header.jsx';
+import How from '../src/components/how/How.jsx'
+import howComponentData from '../src/data/how-it-works.json'
+
 import { useState, useEffect } from 'react'
 
 export default function Index() {
@@ -57,7 +60,8 @@ export default function Index() {
       {featuredCards && < Featured items={featuredCards.nfts} />}
       {trendingItems && trendingFilters && <Trending cards={trendingItems} filters={trendingFilters} />}
       {collectors && collectorFilters && <TopCollectors collectors={collectors.slice(0, 12)} filters={collectorFilters} />}
-      {auctions && auctionFilters && <Auctions cards={auctions} filters={auctionFilters}/>}
+      {howComponentData && <How title={howComponentData.title} description={howComponentData.description} items={howComponentData.items} link={howComponentData.link}/>} 
+      {auctions && auctionFilters && <Auctions cards={auctions} filters={auctionFilters} />}
     </div>
   )
 }
