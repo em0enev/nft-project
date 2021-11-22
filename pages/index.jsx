@@ -6,6 +6,7 @@ import TopCollectors from '../src/components/collectors/TopCollectors.jsx'
 import Auctions from '../src/components/auctions/Auctions.jsx'
 import Header from '../src/components/header/Header.jsx';
 import How from '../src/components/how/How.jsx'
+import Footer from '../src/components/footer/Footer.jsx'
 import howComponentData from '../src/data/how-it-works.json'
 
 import { useState, useEffect } from 'react'
@@ -62,9 +63,7 @@ export default function Index() {
       {collectors && collectorFilters && <TopCollectors collectors={collectors.slice(0, 12)} filters={collectorFilters} />}
       {howComponentData && <How title={howComponentData.title} description={howComponentData.description} items={howComponentData.items} link={howComponentData.link}/>} 
       {auctions && auctionFilters && <Auctions cards={auctions} filters={auctionFilters} />}
+      <Footer />
     </div>
   )
 }
-
-
-//TODO: pass trendingFilters to Trending component !

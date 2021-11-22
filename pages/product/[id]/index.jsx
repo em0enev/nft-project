@@ -19,7 +19,7 @@ export default function index() {
     return (
         <div>
             <Header></Header>
-            {nft && <ProductContainer  source={nft.source} currency={nft.currency} name={nft.name} likes={10} owner={nft.owner} price={nft.price} bids={[]}></ProductContainer>}
+            {nft && <ProductContainer  source={nft.source} currency={nft.currency} name={nft.name} likes={10} owner={nft.owner} price={nft.price} bids={[]} auction_end={nft.auction_end} ></ProductContainer>}
             <Footer></Footer>
         </div>
     )

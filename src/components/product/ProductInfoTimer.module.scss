@@ -1,7 +1,6 @@
 @use "../../styles/colors";
 
 .title{
-    font-weight: bold;
     color: rgb(24, 24, 40);
 }
 
@@ -12,25 +11,25 @@
 .title-container {
     display: flex;
     justify-content: center;
-    opacity: 0.8;
-    height: 45px;
+    align-items: center;
+    opacity: 0.9;
+    background: colors.$secondary_main;
+    width: 100%;
+    height: 37px;
 }
 
-.timer{
+.timer-container{
     font-weight: bold;
+    background: colors.$secondary_main;
     color: rgb(24, 24, 40);
-    font-size: 2.5rem;
-    padding: "3% 10%";
+    font-size: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90px;
-}
-
-.active {
-    background-color: colors.$secondary_main;
+    width: 100%;
+    height: 81px;
 }
 
 .card{
-    height: 135px;
+    height: 118px;
 }
