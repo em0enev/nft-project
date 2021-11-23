@@ -18,7 +18,7 @@ export default function ProductContainer({ name, owner, price, currency, likes, 
   
     return (
         <div className={classNames(styles["product-container"])}>
-            <Grid container spacing={10} xs={1} sx={{ maxWidth: "100%" }}>
+            <Grid container spacing={10}  sx={{ maxWidth: "100%" }}>
                 <Grid item xs={6}>
                     <ProductImage url={source.url} />
                 </Grid>

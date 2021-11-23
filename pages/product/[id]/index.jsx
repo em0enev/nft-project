@@ -8,18 +8,27 @@ import ProductContainer from '../../../src/components/product/ProductContainer.j
 
 
 export default function index() {
+    const [product, setProduct] = useState();
     const router = useRouter()
     const { id } = router.query
 
-    const nft = dataNfts.find(x => {
-        return x.id === Number(id)
-    })
+    useEffect(() => {
+        fetchProductData();
 
-    console.log(nft)
+        async function fetchProductData() {
+            const res = await fetch(`${process.env.apiUrl}/nfts/${id}`);
+            if (res.status === 200) {
+                const data = await res.json();
+                setProduct(data)
+            }
+        }
+    }, [id])
+
+    console.log(product)
     return (
         <div>
             <Header></Header>
-            {nft && <ProductContainer  source={nft.source} currency={nft.currency} name={nft.name} likes={10} owner={nft.owner} price={nft.price} bids={[]} auction_end={nft.auction_end} ></ProductContainer>}
+            {product && <ProductContainer source={product.source} currency={product.currency} name={product.name} likes={10} owner={product.owner} price={product.price} details={product.details} bids={product.bids} auction_end={product.auction_end} ></ProductContainer>}
             <Footer></Footer>
         </div>
     )
