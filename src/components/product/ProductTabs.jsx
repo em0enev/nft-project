@@ -6,6 +6,7 @@ import { useState } from "react";
 import User from "../user/User";
 import { parseISO, formatDistance } from "date-fns"
 import { Box } from "@mui/system";
+
 export default function ProductTabs({ text, bids }) {
     const [value, setValue] = useState('1');
 
@@ -30,11 +31,10 @@ export default function ProductTabs({ text, bids }) {
                     <Table>
                         <TableBody>
                             {bids.map((el, i) => {
-                                console.log(el.user)
                                 return <TableRow sx={{ "td": { border: 0, padding: "0 24px", height: "65px", backgroundColor: i % 2 === 0 ? "rgb(78, 36, 242,0.05)" : "rgb(78, 36, 242,0.15)" } }} onCopyCapture className={classNames([`table-row-${i}`])} key={i} >
                                     <TableCell><User name={el.user.name} verified={el.user.verified} avatar={el.user.avatar} size={34} /></TableCell>
-                                    <TableCell align="right" sx={{ color: "rgb(36,244,95)", fontWeight: "bold" }}>{el.amount}</TableCell>
-                                    <TableCell align="right" sx={{ fontWeight: "bold" }}>{formatDistance(parseISO(bids[0].date), Date.now())} ago</TableCell>
+                                    <TableCell align="right" sx={{ color: "rgb(36,244,95)", fontWeight: "bold" }}>{el.amount} </TableCell>
+                                    <TableCell align="right" sx={{ fontWeight: "bold" }}>{formatDistance(parseISO(el.date), Date.now())} ago</TableCell>
                                 </TableRow>
                             })}
                         </TableBody>

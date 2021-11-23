@@ -23,10 +23,10 @@ export default function ActivityFilters({ filters }) {
                 alignItems="center"
                 spacing={1}>
                 <FormControl sx={{ width: "220px" }}>
-                    <InputLabel id="sort-by-label">{"Sort by"}</InputLabel>
+                    <InputLabel id="sort-by-label" sx={{ paddingLeft: "10px" }}>{"Sort by"}</InputLabel>
                     <Select
                         labelId="sort-by-label"
-                        sx={{ minWidth: "170px" }}
+                        sx={{ div: { paddingLeft: "25px" } }}
                         value={sortBy}
                         onChange={handleSortBy}>
                         {filters.sort.map(el => {
@@ -35,10 +35,10 @@ export default function ActivityFilters({ filters }) {
                     </Select>
                 </FormControl>
                 <FormControl sx={{ width: "220px" }}>
-                    <InputLabel id="type-label">{"Type"}</InputLabel>
+                    <InputLabel id="type-label" sx={{ paddingLeft: "10px" }}>{"Type"}</InputLabel>
                     <Select
                         labelId="type-label"
-                        sx={{ minWidth: "170px" }}
+                        sx={{ div: { paddingLeft: "25px" } }}
                         value={type}
                         onChange={handleTimePeriod}>
                         {filters.type.map(el => {
