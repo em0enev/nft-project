@@ -31,7 +31,7 @@ export default function ExploreFilters({ filters }) {
                         sx={{ minWidth: "170px" }}
                         value={sortBy}
                         onChange={handleSortBy}>
-                        {filters.sort.map(el => {
+                        {filters && filters.sort.map(el => {
                             return <MenuItem key={el.label} value={el.value}>{el.label}</MenuItem>
                         })}
                     </Select>
