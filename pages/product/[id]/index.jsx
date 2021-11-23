@@ -1,11 +1,8 @@
 import { useState, useEffect } from 'react';
-import dataNfts from '../../../src/data/nfts.json';
 import { useRouter } from 'next/router'
-import Link from 'next/link'
 import Header from '../../../src/components/header/Header.jsx'
 import Footer from '../../../src/components/footer/Footer.jsx'
 import ProductContainer from '../../../src/components/product/ProductContainer.jsx';
-
 
 export default function index() {
     const [product, setProduct] = useState();
@@ -23,8 +20,6 @@ export default function index() {
             }
         }
     }, [id])
-
-    console.log(product)
     return (
         <div>
             <Header></Header>

@@ -8,10 +8,26 @@ export default function ProductActions({ isLive, currency, buyAmount, bidAmount,
         <div className={classNames(styles["product-action"])}>
             <Grid container spacing={2}>
                 <Grid item xs={7}>
-                    <Button disabled={isLive} fullWidth className={classNames(styles.button)} variant="contained" onClick={onBuy} disabled={isLive}>Buy for {buyAmount} {currency}</Button>
+                    <Button disabled={isLive} fullWidth className={classNames(styles.button)} variant="contained" onClick={onBuy}
+                        sx={{
+                            "&:disabled":
+                            {
+                                backgroundColor: 'rgba(41,41,49)',
+                                color: "rgb(134,134,138)"
+                            }
+                        }} >Buy for {buyAmount} {currency}</Button>
                 </Grid>
                 <Grid item xs={5}>
-                    <Button disabled={isLive} fullWidth className={classNames(styles.button)} variant="outlined" color={"success"} sx={{ color: "rgba(36, 242, 94)", borderColor: "rgba(36, 242, 94)" }} onClick={onBid}>Place bid for {bidAmount} {currency}</Button>
+                    <Button disabled={isLive} fullWidth className={classNames(styles.button)} variant="outlined" color={"success"} onClick={onBid}
+                        sx={{
+                            border: "2px rgba(36, 242, 94) solid",
+                            color: "rgba(36, 242, 94)",
+                            "&:disabled":
+                            {
+                                border: "2px rgba(41,41,49) solid",
+                                color: "rgb(134,134,138)"
+                            }
+                        }}>Place bid for {bidAmount} {currency}</Button>
                 </Grid>
             </Grid>
         </div>
