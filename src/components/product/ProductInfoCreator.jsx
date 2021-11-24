@@ -12,7 +12,7 @@ export default function ProductInfoCreator({ name, avatar, verified = false }) {
                     <Typography className={classNames(styles.title)} color="textSecondary">CREATOR</Typography>
                 </Container>
                 <Container disableGutters className={classNames(styles["user-container"])} sx={{ display: "flex" }}>
-                    <User  avatar={avatar} verified={verified} name={name} ></User>
+                    <User avatar={avatar} verified={verified} name={name}></User>
                 </Container>
             </Card>
         </div>
