@@ -4,13 +4,14 @@ import Card from '../card/Card';
 import styles from "./Trending.module.scss";
 import classNames from "classnames";
 
-export default function Trending({ cards = [], filters = [] }) {
+export default function Trending({ cards = [], filters = [], setTimePeriod }) {
     const [period, setPeriod] = useState("1")
 
     const handleChange = (event) => {
         setPeriod(event.target.value)
+        setTimePeriod(event.target.value)
     }
-    console.log(filters)
+
     return (
         <Container disableGutters sx={{ paddingY: "50px" }} maxWidth="xl">
             <Grid container className={classNames(styles["title-filters-container"])}
