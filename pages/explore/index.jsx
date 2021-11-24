@@ -45,8 +45,6 @@ export default function Explore() {
         } else if (priceFilterValue !== 0) {
             fetchExploreData(`/explore?price=${priceFilterValue}`)
         }
-
-
     }, [sortByFilter, priceFilterValue])
 
     // useEffect(() => {

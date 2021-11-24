@@ -4,16 +4,18 @@ import { FormControl, InputAdornment, InputLabel, MenuItem, Select, Stack, TextF
 import SearchIcon from '@mui/icons-material/Search'
 import { useState } from "react"
 
-export default function ActivityFilters({ filters }) {
+export default function ActivityFilters({ filters, setSortByFilter, setTypeFilter }) {
     const [sortBy, setSortBy] = useState("")
     const [type, setType] = useState("")
 
     const handleSortBy = (event) => {
         setSortBy(event.target.value)
+        setSortByFilter(event.target.value)
     }
 
     const handleTimePeriod = (event) => {
         setType(event.target.value)
+        setTypeFilter(event.target.value)
     }
 
     return (
