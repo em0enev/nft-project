@@ -3,7 +3,6 @@ import Footer from '../../src/components/footer/Footer.jsx'
 import ExploreTitle from '../../src/components/explore/ExploreTitle.jsx'
 import ExploreFilters from '../../src/components/explore/ExploreFilters.jsx'
 import Card from '../../src/components/card/Card.jsx'
-import filtersData from '../../src/data/filtersExplore.json'
 import { Container, Grid } from '@mui/material'
 import classNames from "classnames";
 import styles from "./index.module.scss"
@@ -12,6 +11,10 @@ import { useEffect, useState } from 'react'
 export default function Explore() {
     const [nfts, setNfts] = useState([])
     const [filters, setFilters] = useState()
+    const [sortByFilter, setSortByFilter] = useState(0);
+    const [priceFilterValue, setPriceFilterValue] = useState(0);
+    const [minSortValue, setMinSortValue] = useState()
+    const [maxSortValue, setMaxSortValue] = useState()
 
     useEffect(() => {
         fetchExploreData();
@@ -26,6 +29,57 @@ export default function Explore() {
         }
     }, [])
 
+    useEffect(() => {
+        const types = {
+            1: "created_at",
+            2: "created_at",
+            3: "name",
+            4: "name",
+            5: "price",
+            6: "price"
+        }
+        const sortProperty = types[sortByFilter];
+
+        function sortAsc(first, second) {
+            if (first[sortProperty] < second[sortProperty]) {
+                return 1;
+            }
+            if (first[sortProperty] > second[sortProperty]) {
+                return -1;
+            }
+            return 0;
+        }
+
+        function sortDsc(first, second) {
+            if (first[sortProperty] > second[sortProperty]) {
+                return 1;
+            }
+            if (first[sortProperty] < second[sortProperty]) {
+                return -1;
+            }
+            return 0;
+        }
+
+        const sortedNfts = nfts.sort((a, b) => sortByFilter % 2 !== 0 ? sortDsc(a, b) : sortAsc(a, b))
+        setNfts([...sortedNfts])
+
+    }, [sortByFilter])
+
+    useEffect(() => {
+        const range = {
+            0: { min: Number.MIN_SAFE_INTEGER, max: Number.MAX_SAFE_INTEGER },
+            7: { min: 0, max: 0.01 },
+            8: { min: 0.01, max: 0.04 },
+            9: { min: 0.04, max: 1.2 }
+        }
+
+        const filterRange = range[priceFilterValue];
+        console.log(filterRange)
+        setMinSortValue(filterRange.min);
+        setMaxSortValue(filterRange.max)
+
+    }, [priceFilterValue])
+
     return (
         <div >
             <Header />
@@ -35,20 +89,14 @@ export default function Explore() {
                         <ExploreTitle text={"Explore"} />
                     </Grid>
                     <Grid item xs={9}>
-                       {filters &&  <ExploreFilters filters={filters} />}
+                        {filters && <ExploreFilters filters={filters} setSortByFilter={setSortByFilter} setPriceFilterValue={setPriceFilterValue} />}
                     </Grid>
                 </Grid>
                 <Grid container justifyContent="space-between" spacing={4} rowSpacing={2} maxWidth="xl" sx={{ marginTop: "60px" }}>
-                    {nfts && nfts.map(el => {
-                        const user = nfts.map(el => {
-                            return {
-                                "avatarUrl": el.owner.avatar.url,
-                                "verified": false
-                            }
-                        })
+                    {nfts && nfts.filter(nft => Number(nft.price) >= minSortValue && Number(nft.price) <= maxSortValue).map(el => {
                         return (
                             <Grid item xs={3} key={el.id}>
-                                <Card name={el.name} price={el.price} currency={el.currency} mediaUrl={el.source.url} user={user} likes={el.likes} />
+                                <Card name={el.name} price={el.price} currency={el.currency} mediaUrl={el.source.url} user={el.owner} likes={el.likes} />
                             </Grid>
                         )
                     })}

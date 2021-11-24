@@ -17,7 +17,7 @@ export default function Profile() {
         fetchUserData();
 
         async function fetchUserData() {
-            const res = await fetch(`${process.env.apiUrl}/users/${id}`).catch(err => console.log(err));
+            const res = await fetch(`${process.env.apiUrl}/users/${id}`);
             if (res.status === 200) {
                 const data = await res.json();
                 setUser(data.user)

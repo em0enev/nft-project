@@ -5,16 +5,18 @@ import SearchIcon from '@mui/icons-material/Search'
 import { useState } from "react"
 
 
-export default function ExploreFilters({ filters }) {
+export default function ExploreFilters({ filters, setSortByFilter, setPriceFilterValue }) {
     const [sortBy, setSortBy] = useState("")
     const [price, setPrice] = useState("")
 
     const handleSortBy = (event) => {
         setSortBy(event.target.value)
+        setSortByFilter(event.target.value)
     }
 
     const handleTimePeriod = (event) => {
         setPrice(event.target.value)
+        setPriceFilterValue(event.target.value)
     }
 
     return (
