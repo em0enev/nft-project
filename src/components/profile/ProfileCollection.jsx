@@ -21,7 +21,7 @@ export default function ProfileCollection({ user, filters, items }) {
                     {items.map(el => {
                         return (
                             <Grid item key={el.id} xs={3}>
-                                <Card  user={user} name={el.name} price={el.price} likes={el.likes} currency={el.currency} mediaUrl={el.source.url} />
+                                <Card user={user} name={el.name} price={el.price} likes={el.likes} currency={el.currency} mediaUrl={el.source.url} />
                             </Grid>
                         )
                     })}

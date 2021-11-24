@@ -13,7 +13,7 @@ export default function Card({ name, likes = 0, mediaUrl, user, price, currency,
     return (
         <MUICard className={timeLeft ? clsx(styles.liveCard, styles.card) : classNames(styles.card)} sx={timeLeft ? { backgroundColor: "rgba(36, 242, 94, 0.1)" } : {}}>
             <CardContent>
-                <Avatar verified={user.verified} url={user.avatarUrl} size={33} />
+                <Avatar verified={user.verified} url={user.avatar.url} size={33} />
                 <Container disableGutters className={classNames(styles.imgContainer)}>
                     <CardMedia
                         component="img"
