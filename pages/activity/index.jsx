@@ -33,12 +33,12 @@ export default function Activity() {
             }
         }
         if (sortByFilter !== 0 && typeFilter !== 0) {
-            fetchActivitiesData(`/activities?sort=${sortByFilter}&price=${typeFilter}`)
+            fetchActivitiesData(`/activities?sort=${sortByFilter}&type=${typeFilter}`)
         }
         else if (sortByFilter !== 0) {
             fetchActivitiesData(`/activities?sort=${sortByFilter}`);
         } else if (typeFilter !== 0) {
-            fetchActivitiesData(`/activities?price=${typeFilter}`)
+            fetchActivitiesData(`/activities?type=${typeFilter}`)
         }
     }, [sortByFilter, typeFilter])
 
