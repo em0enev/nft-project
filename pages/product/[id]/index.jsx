@@ -20,6 +20,7 @@ export default function index() {
             }
         }
     }, [id])
+
     return (
         <div>
             <Header></Header>
