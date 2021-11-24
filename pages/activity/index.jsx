@@ -29,7 +29,7 @@ export default function Activity() {
             const res = await fetch(`${process.env.apiUrl}${path}`);
             if (res.status === 200) {
                 const data = await res.json();
-                setNfts(data.nfts)
+                setActivities(data.nfts)
             }
         }
         if (sortByFilter !== 0 && typeFilter !== 0) {
