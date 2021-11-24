@@ -5,7 +5,7 @@ import CollectorColumn from "./CollectorColumn";
 import styles from "./TopCollectors.module.scss";
 import classNames from "classnames";
 
-export default function TopCollectors({ collectors = [], filters = [] }) {
+export default function TopCollectors({ collectors = [], filters = [], setTopCollectorsFilter }) {
     const [sortBy, setSortBy] = useState("")
 
     let collectorsDescOrder = collectors.sort((first, second) => {
@@ -18,6 +18,7 @@ export default function TopCollectors({ collectors = [], filters = [] }) {
 
     const handleChange = (event) => {
         setSortBy(event.target.value)
+        setTopCollectorsFilter(event.target.value)
     }
 
     return (

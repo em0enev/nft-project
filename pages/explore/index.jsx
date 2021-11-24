@@ -13,8 +13,8 @@ export default function Explore() {
     const [filters, setFilters] = useState()
     const [sortByFilter, setSortByFilter] = useState(0);
     const [priceFilterValue, setPriceFilterValue] = useState(0);
-    const [minSortValue, setMinSortValue] = useState()
-    const [maxSortValue, setMaxSortValue] = useState()
+    // const [minSortValue, setMinSortValue] = useState()
+    // const [maxSortValue, setMaxSortValue] = useState()
 
     useEffect(() => {
         fetchExploreData();
