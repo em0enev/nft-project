@@ -9,6 +9,8 @@ import { useEffect, useState } from 'react'
 export default function Profile() {
     const [user, setUser] = useState();
     const [filters, setFilters] = useState();
+    const [sortByFilterValue, setSortByFilterValue] = useState();
+    const [priceRangeFilterValue, setPriceRangeFilterValue] = useState();
 
     const router = useRouter()
     const { id } = router.query
@@ -26,12 +28,30 @@ export default function Profile() {
         }
     }, [id])
 
+    useEffect(() => {
+        async function fetchExploreData(path) {
+            const res = await fetch(`${process.env.apiUrl}${path}`);
+            if (res.status === 200) {
+                const data = await res.json();
+                setUser(data.user)
+            }
+        }
+        if (sortByFilterValue !== 0 && priceRangeFilterValue !== 0) {
+            fetchExploreData(`/users/${id}?sort=${sortByFilterValue}&price=${priceRangeFilterValue}`)
+        }
+        else if (sortByFilterValue !== 0) {
+            fetchExploreData(`/users/${id}?sort=${sortByFilterValue}`);
+        } else if (priceRangeFilterValue !== 0) {
+            fetchExploreData(`/users/${id}?price=${priceRangeFilterValue}`)
+        }
+    }, [sortByFilterValue, priceRangeFilterValue])
+    console.log(sortByFilterValue)
     return (
         <div>
             <Header />
             {user && <ProfileHero image={user.avatar.backgroundUrl} />}
             {user && <ProfileUser name={user.username} avatar={user.avatar.url} verified={user.verified} info={user.info} />}
-            {user && filters && <ProfileCollection filters={filters} items={user.nfts} user={user} />}
+            {user && filters && <ProfileCollection filters={filters} items={user.nfts} user={user} setSortByFilterValue={setSortByFilterValue} setPriceRangeFilterValue={setPriceRangeFilterValue}/>}
             <Footer />
         </div>
     )
