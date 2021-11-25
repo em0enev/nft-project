@@ -89,6 +89,7 @@ export default function Index() {
       if (res.status === 200) {
         const data = await res.json();
         setAuctions(data.nfts)
+        console.log("change")
       }
     }
 
