@@ -3,11 +3,12 @@ import { useState } from "react";
 import Card from '../card/Card';
 
 
-export default function Auctions({ cards = [], filters = [] }) {
+export default function Auctions({ cards = [], filters = [], setLiveAuctionsFilterValue }) {
     const [priceRange, setPriceRange] = useState("")
 
     const handleChange = (event) => {
         setPriceRange(event.target.value)
+        setLiveAuctionsFilterValue(event.target.value)
     }
 
     return (

@@ -21,6 +21,7 @@ export default function Index() {
   const [auctionFilters, setAuctionFilters] = useState([]);
   const [timePeriod, setTimePeriod] = useState(0);
   const [topCollectorsFilter, setTopCollectorsFilter] = useState("")
+  const [liveAuctionsFilterValue, setLiveAuctionsFilterValue] = useState(0);
 
   useEffect(() => {
     fetchFeaturedData();
@@ -82,6 +83,18 @@ export default function Index() {
     fetchTopCollectorsFilteredData(`/top-collectors?sort=${topCollectorsFilter}`);
   }, [topCollectorsFilter])
 
+  useEffect(() => {
+    async function fetchLiveAuctionsFilteredData(path) {
+      const res = await fetch(`${process.env.apiUrl}${path}`);
+      if (res.status === 200) {
+        const data = await res.json();
+        setAuctions(data.nfts)
+      }
+    }
+
+    fetchLiveAuctionsFilteredData(`/live-auctions?price=${liveAuctionsFilterValue}`);
+  }, [liveAuctionsFilterValue])
+
   return (
     <div>
       <Header />
@@ -89,7 +102,7 @@ export default function Index() {
       {trendingItems && trendingFilters && <Trending cards={trendingItems} filters={trendingFilters} setTimePeriod={setTimePeriod} />}
       {collectors && collectorFilters && <TopCollectors collectors={collectors.slice(0, 12)} filters={collectorFilters} setTopCollectorsFilter={setTopCollectorsFilter} />}
       {howComponentData && <How title={howComponentData.title} description={howComponentData.description} items={howComponentData.items} link={howComponentData.link} />}
-      {auctions && auctionFilters && <Auctions cards={auctions} filters={auctionFilters} />}
+      {auctions && auctionFilters && <Auctions cards={auctions} filters={auctionFilters} setLiveAuctionsFilterValue={setLiveAuctionsFilterValue} />}
       <Footer />
     </div>
   )
