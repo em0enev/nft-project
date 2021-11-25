@@ -20,7 +20,7 @@ export default function Index() {
   const [auctions, setAuctions] = useState([]);
   const [auctionFilters, setAuctionFilters] = useState([]);
   const [timePeriod, setTimePeriod] = useState(0);
-  const [topCollectorsFilter, setTopCollectorsFilter] = useState("desc")
+  const [topCollectorsFilter, setTopCollectorsFilter] = useState("")
 
   useEffect(() => {
     fetchFeaturedData();
@@ -75,7 +75,7 @@ export default function Index() {
       const res = await fetch(`${process.env.apiUrl}${path}`);
       if (res.status === 200) {
         const data = await res.json();
-        setCollectors(data.users)
+        setCollectors([...data.users])
       }
     }
 
