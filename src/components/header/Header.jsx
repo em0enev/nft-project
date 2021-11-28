@@ -47,12 +47,12 @@ export default function Header() {
                 direction="row"
                 justifyContent="space-between">
                 <Grid item
-                    item xl={2} md={2} sm={12} sx={12}
+                    item xl={2} md={2} sm={12} xs={12}
                     className={classNames(classes['logo'])}>
                     <Logo></Logo>
                 </Grid>
                 <Grid item
-                    xl={5} md={5} sm={12} sx={12}
+                    xl={5} md={5} sm={12} xs={12}
                     className={classNames(classes['text-field-container'])} >
                     <TextField fullWidth
                         placeholder="Find items, users and activities"
@@ -67,7 +67,7 @@ export default function Header() {
                         }} />
                 </Grid>
                 <Grid item container
-                    xl={5} md={5} sm={12} sx={12}
+                    xl={5} md={5} sm={12} xs={12}
                     className={classNames(classes['buttons-container'])}
                     direction="row"
                     justifyContent="flex-end"

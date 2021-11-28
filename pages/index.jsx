@@ -100,7 +100,7 @@ export default function Index() {
       {trendingItems && trendingFilters && <Trending cards={trendingItems} filters={trendingFilters} setTimePeriod={setTimePeriod} />}
       {collectors && collectorFilters && <TopCollectors collectors={collectors.slice(0, 12)} filters={collectorFilters} setTopCollectorsFilter={setTopCollectorsFilter} />}
       {howComponentData && <How title={howComponentData.title} description={howComponentData.description} items={howComponentData.items} link={howComponentData.link} />}
-      {auctions && auctionFilters && <Auctions cards={auctions} filters={auctionFilters} setLiveAuctionsFilterValue={setLiveAuctionsFilterValue} />}
+      {auctions && auctionFilters && <Auctions cards={auctions} filters={auctionFilters} setLiveAuctionsFilterValue={setLiveAuctionsFilterValue} />} 
       <Footer />
     </div>
   )

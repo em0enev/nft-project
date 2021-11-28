@@ -10,7 +10,7 @@ export default function HowStep({ number, title, description }) {
             </Container>
             <Container sx={{ display: "grid" }} className={classNames(styles.infoContainer)}>
                 <Typography variant={"h5"} >{title.toUpperCase()}</Typography>
-                <Typography color="textSecondary" sx={{ opacity: "0.7" }} font>{description}</Typography>
+                <Typography color="textSecondary" sx={{ opacity: "0.7" }}>{description}</Typography>
             </Container>
         </Card>
     )

@@ -21,7 +21,7 @@ export default function Card({ name, likes = 0, mediaUrl, user, price, currency,
                         alt="card media"
                         className={classNames(styles.media)} />
                     {timeLeft && <Box className={classNames(styles.badge)}>LIVE</Box>}
-                    {timeLeft && <Countdown date={timeLeft} daysInHours={true} renderer={props => {
+                    {timeLeft && <Countdown date={timeLeft} daysInHours renderer={props => {
                         return <div className={classNames(styles.timer)}>{zeroPad(props.formatted.hours)}:{zeroPad(props.formatted.minutes)}:{zeroPad(props.formatted.seconds)}</div>
                     }} />}
                 </Container>
