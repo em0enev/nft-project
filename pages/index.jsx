@@ -1,5 +1,3 @@
-
-import ExploreFilters from '../src/components/explore/ExploreFilters.jsx';
 import Featured from '../src/components/featured/Featured.jsx';
 import Trending from '../src/components/trending/Trending.jsx';
 import TopCollectors from '../src/components/collectors/TopCollectors.jsx'
@@ -89,7 +87,6 @@ export default function Index() {
       if (res.status === 200) {
         const data = await res.json();
         setAuctions(data.nfts)
-        console.log("change")
       }
     }
 
