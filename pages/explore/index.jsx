@@ -13,9 +13,7 @@ export default function Explore() {
     const [filters, setFilters] = useState()
     const [sortByFilter, setSortByFilter] = useState(0);
     const [priceFilterValue, setPriceFilterValue] = useState(0);
-    // const [minSortValue, setMinSortValue] = useState()
-    // const [maxSortValue, setMaxSortValue] = useState()
-
+    
     useEffect(() => {
         fetchExploreData();
 
@@ -47,57 +45,6 @@ export default function Explore() {
         }
     }, [sortByFilter, priceFilterValue])
 
-    // useEffect(() => {
-    //     const types = {
-    //         1: "created_at",
-    //         2: "created_at",
-    //         3: "name",
-    //         4: "name",
-    //         5: "price",
-    //         6: "price"
-    //     }
-    //     const sortProperty = types[sortByFilter];
-
-    //     function sortAsc(first, second) {
-    //         if (first[sortProperty] < second[sortProperty]) {
-    //             return 1;
-    //         }
-    //         if (first[sortProperty] > second[sortProperty]) {
-    //             return -1;
-    //         }
-    //         return 0;
-    //     }
-
-    //     function sortDsc(first, second) {
-    //         if (first[sortProperty] > second[sortProperty]) {
-    //             return 1;
-    //         }
-    //         if (first[sortProperty] < second[sortProperty]) {
-    //             return -1;
-    //         }
-    //         return 0;
-    //     }
-
-    //     const sortedNfts = nfts.sort((a, b) => sortByFilter % 2 !== 0 ? sortDsc(a, b) : sortAsc(a, b))
-    //     setNfts([...sortedNfts])
-
-    // }, [sortByFilter])
-
-    // useEffect(() => {
-    //     const range = {
-    //         0: { min: Number.MIN_SAFE_INTEGER, max: Number.MAX_SAFE_INTEGER },
-    //         7: { min: 0, max: 0.01 },
-    //         8: { min: 0.01, max: 0.04 },
-    //         9: { min: 0.04, max: 1.2 }
-    //     }
-
-    //     const filterRange = range[priceFilterValue];
-    //     console.log(filterRange)
-    //     setMinSortValue(filterRange.min);
-    //     setMaxSortValue(filterRange.max)
-
-    // }, [priceFilterValue])
-
     return (
         <div >
             <Header />
@@ -124,5 +71,3 @@ export default function Explore() {
         </div >
     )
 }
-
-//.filter(nft => Number(nft.price) >= minSortValue && Number(nft.price) <= maxSortValue)
