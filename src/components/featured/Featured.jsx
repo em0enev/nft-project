@@ -2,15 +2,25 @@ import { Container, ImageList, ImageListItem } from "@mui/material";
 import styles from "./Featured.module.scss";
 import classNames from "classnames";
 import { useRouter } from "next/router";
+import { makeStyles } from "@mui/styles";
+import theme from '../../theme.js'
 
+const useStyles = makeStyles(() => ({
+    "image-list": {
+        [theme.breakpoints.down('md')]: {
+            gridTemplateColumns: 'repeat(3, 1fr) !important',
+        }
+    }
+}))
 
 export default function Featured({ items = [] }) {
     const router = useRouter();
+    const classes = useStyles();
 
     return (
         <Container disableGutters sx={{ paddingY: "75px" }} maxWidth="xl">
             <ImageList
-                sx={{ width: "100%" }}
+                className={classNames(classes['image-list'])}
                 variant="quilted"
                 cols={6}
                 rowHeight={225}
