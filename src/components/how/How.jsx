@@ -7,18 +7,19 @@ import theme from '../../theme.js'
 
 const useStyles = makeStyles(() => ({
     'grid-container-center': {
-        [theme.breakpoints.down('md')]: {
+        [theme.breakpoints.down('lg')]: {
             justifyContent: 'center'
         }
     },
     'text-container-center': {
-        [theme.breakpoints.down('md')]: {
+        [theme.breakpoints.down('lg')]: {
             justifyContent: 'center',
-            textAlign: "center"
+            textAlign: "center",
+            paddingTop: "20px"
         }
     },
     'step-container-center': {
-        [theme.breakpoints.down('md')]: {
+        [theme.breakpoints.down('lg')]: {
             justifyContent: 'center'
         }
     }
@@ -32,7 +33,7 @@ export default function How({ description, title, items = [], link }) {
             <Grid container className={classNames(styles['grid-container'], classes['grid-container-center'])} maxWidth="xl">
                 <Grid item container
                     className={classNames(styles['text-container'], classes['text-container-center'])}
-                    sm={12} md={5}>
+                    md={12} lg={5}>
                     <Typography variant="h1">{title}</Typography>
                     <Typography color="textSecondary" className={classNames(styles.description)}>{description}</Typography>
                     <Button href={link} variant="contained" className={classNames(styles['learn-more-btn'])}>Learn more</Button>
