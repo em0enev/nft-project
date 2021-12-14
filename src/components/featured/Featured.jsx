@@ -18,7 +18,7 @@ export default function Featured({ items = [] }) {
     const classes = useStyles();
 
     return (
-        <Container disableGutters maxWidth="xl" className={classNames(classes['feature-section-container'])}>
+        <Container  maxWidth="xl" className={classNames(classes['feature-section-container'])}>
             <ImageList
                 className={classNames(classes['image-list'])}
                 variant="quilted"
