@@ -5,14 +5,25 @@ import classNames from "classnames";
 export default function HowStep({ number, title, description }) {
     return (
         <Card className={classNames(styles.card)}>
+            {/* 
             <Container sx={{ width: "35%", display: "flex" }} className={classNames(styles.numberContainer)}>
                 <Typography sx={{ fontSize: "100px" }} fontWeight="bold">{number}</Typography>
             </Container>
+
             <Container sx={{ display: "grid" }} className={classNames(styles.infoContainer)}>
                 <Typography variant={"h5"} >{title.toUpperCase()}</Typography>
                 <Typography color="textSecondary" sx={{ opacity: "0.7" }}>{description}</Typography>
-            </Container>
+            </Container> */}
+
+            <Grid container>
+                <Grid item xs={3} className={classNames(styles.numberContainer)}>
+                    <Typography sx={{ fontSize: "100px" }} fontWeight="bold">{number}</Typography>
+                </Grid>
+                <Grid item xs={9} className={classNames(styles.infoContainer)}>
+                    <Typography variant={"h5"} >{title.toUpperCase()}</Typography>
+                    <Typography color="textSecondary" sx={{ opacity: "0.7" }}>{description}</Typography>
+                </Grid>
+            </Grid>
         </Card>
     )
 }
-

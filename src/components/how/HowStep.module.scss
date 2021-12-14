@@ -2,18 +2,20 @@
 
 .card {
     display: flex;
-    width: 580px;
-    height: 215px;
+    max-width: 580px;
+    min-height: 215px;
 }
 
 .numberContainer{
-    align-items: center;
+    display: flex;
     justify-content: center;
+    align-items: center;
     background-color: rgba(colors.$primary_main, 10%);
 }
 
 .infoContainer{
+    margin: auto;
     display: grid;
-    gap: 15px;
-    margin: auto 30px;
+    gap: 10px;
+    padding: 50px;
 }
