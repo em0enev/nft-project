@@ -1,14 +1,15 @@
 .divWrapper{
-    display: grid;
-    justify-items: center;
+    display: grid ;
+    justify-items: center ;
     align-content: center;
     background-color: rgb(78,36, 242);
-    height: 640px;
+    min-height: 640px ;
 }
 
 .grid-container{
     justify-content: space-between;
-    height: 700px;
+    padding: 0 36px;
+    gap: 50px;
 }
 
 .text-container{
@@ -21,6 +22,13 @@
 }
 
 .step-container{
-    align-content: space-between;
     display: grid;
+    gap: 30px;
+    margin-top: -20px !important;
+    margin-bottom: -20px !important;
+}
+
+.learn-more-btn{
+    background-color: white !important;
+    color: rgb(78,36, 242) !important;
 }
