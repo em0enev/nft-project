@@ -3,10 +3,28 @@ import { useState } from "react";
 import Card from '../card/Card';
 import classNames from "classnames";
 import styles from "./Auctions.module.scss"
+import { makeStyles } from "@mui/styles";
+import theme from '../../theme.js'
+
+const useStyles = makeStyles(() => ({
+    'title-filters-container': {
+        [theme.breakpoints.down('sm')]: {
+            justifyContent: "center",
+            gap: "10px"
+        }
+    },
+    'cards-container': {
+        [theme.breakpoints.down('lg')]: {
+            justifyContent: 'center',
+            gap: "10px"
+        }
+    }
+}))
 
 
 export default function Auctions({ cards = [], filters = [], setLiveAuctionsFilterValue }) {
     const [priceRange, setPriceRange] = useState("")
+    const classes = useStyles();
 
     const handleChange = (event) => {
         setPriceRange(event.target.value)
@@ -14,9 +32,10 @@ export default function Auctions({ cards = [], filters = [], setLiveAuctionsFilt
     }
 
     return (
-        <div className={classNames(styles.wrapper)}>
+        <div className={classNames(styles['wrapper'])}>
             <Container disableGutters sx={{ paddingY: "30px" }} maxWidth="xl" >
                 <Grid container
+                    className={classNames(classes['title-filters-container'])}
                     direction="row"
                     justifyContent="space-between"
                     alignItems="center"
@@ -36,6 +55,7 @@ export default function Auctions({ cards = [], filters = [], setLiveAuctionsFilt
                     </FormControl>
                 </Grid >
                 <Grid container
+                    className={classNames(classes['cards-container'])}
                     direction="row"
                     justifyContent="space-between"
                     alignItems="center">
