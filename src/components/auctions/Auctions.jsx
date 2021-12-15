@@ -8,7 +8,8 @@ import theme from '../../theme.js'
 
 const useStyles = makeStyles(() => ({
     'title-filters-container': {
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down('md')]: {
+            textAlign: "center",
             justifyContent: "center",
             gap: "10px"
         }
@@ -33,7 +34,7 @@ export default function Auctions({ cards = [], filters = [], setLiveAuctionsFilt
 
     return (
         <div className={classNames(styles['wrapper'])}>
-            <Container disableGutters sx={{ paddingY: "30px" }} maxWidth="xl" >
+            <Container sx={{ paddingY: "30px" }} maxWidth="xl" >
                 <Grid container
                     className={classNames(classes['title-filters-container'])}
                     direction="row"

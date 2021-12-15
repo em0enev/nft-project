@@ -9,7 +9,7 @@ import theme from '../../theme.js'
 
 const useStyles = makeStyles(() => ({
     'title-filters-container': {
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down('md')]: {
             textAlign: 'center',
             justifyContent: 'center',
             gap: '10px'
@@ -39,7 +39,7 @@ export default function TopCollectors({ collectors = [], filters = [], setTopCol
         setSortBy(event.target.value)
         setTopCollectorsFilter(event.target.value)
     }
-    console.log(theme)
+
     return (
         <div className={classNames(styles.divWrapper)}>
             <Container  maxWidth="xl" className={classNames(styles['top-collector-section'])}>
