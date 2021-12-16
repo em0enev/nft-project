@@ -9,17 +9,17 @@ export default function ProfileCollection({ user, filters, items, setSortByFilte
     return (
         <div className={classNames(styles['profile-collection'])}>
             <Container maxWidth="xl">
-                <Grid container sx={{ alignItems: "baseline" }}>
-                    <Grid item xs={3} >
+                <Grid container spacing={3} sx={{ alignItems: "baseline" }}>
+                    <Grid item xs={12} lg={3} display="flex" justifyContent={{ xs: "center", lg: "flex-start" }} >
                         <Typography variant={"h2"}>Collection</Typography>
                     </Grid>
-                    <Grid item xs={9}>
+                    <Grid item xs={12} lg={9} display="flex" justifyContent={{ xs: "center", lg: "flex-end" }}>
                         <ProfileCollectionFilters filters={filters} setSortByFilterValue={setSortByFilterValue} setPriceRangeFilterValue={setPriceRangeFilterValue} />
                     </Grid>
                 </Grid>
                 <Grid container
                     direction="row"
-                    justifyContent="flex-start"
+                    justifyContent={{ xs: "center", lg: "flex-start" }}
                     alignItems="center" spacing={2} sx={{ marginTop: "40px" }}>
                     {items.map(el => {
                         return (

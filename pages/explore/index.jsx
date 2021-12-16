@@ -13,7 +13,7 @@ export default function Explore() {
     const [filters, setFilters] = useState()
     const [sortByFilter, setSortByFilter] = useState(0);
     const [priceFilterValue, setPriceFilterValue] = useState(0);
-    
+
     useEffect(() => {
         fetchExploreData();
 

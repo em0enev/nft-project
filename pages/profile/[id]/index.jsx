@@ -45,13 +45,13 @@ export default function Profile() {
             fetchExploreData(`/users/${id}?price=${priceRangeFilterValue}`)
         }
     }, [sortByFilterValue, priceRangeFilterValue])
-    console.log(sortByFilterValue)
+
     return (
         <div>
             <Header />
             {user && <ProfileHero image={user.avatar.backgroundUrl} />}
             {user && <ProfileUser name={user.username} avatar={user.avatar.url} verified={user.verified} info={user.info} />}
-            {user && filters && <ProfileCollection filters={filters} items={user.nfts} user={user} setSortByFilterValue={setSortByFilterValue} setPriceRangeFilterValue={setPriceRangeFilterValue}/>}
+            {user && filters && <ProfileCollection filters={filters} items={user.nfts} user={user} setSortByFilterValue={setSortByFilterValue} setPriceRangeFilterValue={setPriceRangeFilterValue} />}
             <Footer />
         </div>
     )

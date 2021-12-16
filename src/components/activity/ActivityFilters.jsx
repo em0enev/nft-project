@@ -3,6 +3,7 @@ import styles from "./ActivityFilters.module.scss"
 import { FormControl, InputAdornment, InputLabel, MenuItem, Select, Stack, TextField } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search'
 import { useState } from "react"
+import { Box } from "@mui/material/node_modules/@mui/system";
 
 export default function ActivityFilters({ filters, setSortByFilter, setTypeFilter }) {
     const [sortBy, setSortBy] = useState("")
@@ -21,7 +22,7 @@ export default function ActivityFilters({ filters, setSortByFilter, setTypeFilte
     return (
         <div className={classNames(styles['activity-filters'])}>
             <Stack
-                direction="row"
+                direction={{ xs: 'column', md: 'row' }}
                 alignItems="center"
                 spacing={1}>
                 <FormControl sx={{ width: "220px" }}>

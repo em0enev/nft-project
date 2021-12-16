@@ -22,11 +22,11 @@ export default function ProfileCollectionFilters({ filters, setSortByFilterValue
     return (
         <div className={classNames(styles['profile-collection-filters'])}>
             <Stack
-                direction="row"
+                direction={{ xs: 'column', md: 'row' }}
                 justifyContent="flex-end"
                 alignItems="center"
                 spacing={1}>
-                <FormControl sx={{ width: "220px" }}>
+                <FormControl sx={{ minWidth: "220px" }}>
                     <InputLabel id="sort-by-label">{"Sort by"}</InputLabel>
                     <Select
                         labelId="sort-by-label"
@@ -38,7 +38,7 @@ export default function ProfileCollectionFilters({ filters, setSortByFilterValue
                         })}
                     </Select>
                 </FormControl>
-                <FormControl sx={{ width: "220px" }}>
+                <FormControl sx={{ minWidth: "220px" }}>
                     <InputLabel id="price-range-label">{"Price range"}</InputLabel>
                     <Select
                         labelId="price-range-label"
@@ -50,7 +50,7 @@ export default function ProfileCollectionFilters({ filters, setSortByFilterValue
                         })}
                     </Select>
                 </FormControl>
-                <FormControl sx={{ width: "340px" }}>
+                <FormControl sx={{ minWidth: "340px" }}>
                     <TextField fullWidth sx={{ div: { backgroundColor: 'rgb(24, 24,40)' } }} InputProps={{
                         startAdornment: (
                             < InputAdornment position="start" color="secondary" variant="standard" >

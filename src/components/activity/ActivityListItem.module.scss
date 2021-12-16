@@ -1,7 +1,8 @@
 .card{
     display: flex;
-    width: 940px;
-    height: 105px;
+    width: 100%;
+    max-width: 940px;
+    min-height: 105px;
 }
 
 .avatar {
