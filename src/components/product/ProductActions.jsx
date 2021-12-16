@@ -7,7 +7,7 @@ export default function ProductActions({ isLive, currency, buyAmount, bidAmount,
     return (
         <div className={classNames(styles["product-action"])}>
             <Grid container spacing={2}>
-                <Grid item xs={7}>
+                <Grid item xs={12} sm={7}>
                     <Button disabled={isLive} fullWidth className={classNames(styles.button)} variant="contained" onClick={onBuy}
                         sx={{
                             "&:disabled":
@@ -17,7 +17,7 @@ export default function ProductActions({ isLive, currency, buyAmount, bidAmount,
                             }
                         }} >Buy for {buyAmount} {currency}</Button>
                 </Grid>
-                <Grid item xs={5}>
+                <Grid item xs={12} sm={5}>
                     <Button disabled={isLive} fullWidth className={classNames(styles.button)} variant="outlined" color={"success"} onClick={onBid}
                         sx={{
                             border: "2px rgba(36, 242, 94) solid",

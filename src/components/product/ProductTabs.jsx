@@ -27,9 +27,9 @@ export default function ProductTabs({ text, bids }) {
                 <TabPanel sx={{ paddingX: 0 }} value="1">
                     <Typography color="textSecondary" className={classNames(styles["details-text"])}>{text}</Typography>
                 </TabPanel>
-                <TabPanel value="2" sx={{ paddingX: 0 }}>
-                    <Table>
-                        <TableBody>
+                <TabPanel value="2" sx={{ paddingX: 0, overflowX: "auto" }}>
+                    <Table >
+                        <TableBody >
                             {bids.map((el, i) => {
                                 return <TableRow sx={{ "td": { border: 0, padding: "0 24px", height: "65px", backgroundColor: i % 2 === 0 ? "rgb(78, 36, 242,0.05)" : "rgb(78, 36, 242,0.15)" } }} onCopyCapture className={classNames([`table-row-${i}`])} key={i} >
                                     <TableCell><User name={el.user.name} verified={el.user.verified} avatar={el.user.avatar} size={34} /></TableCell>

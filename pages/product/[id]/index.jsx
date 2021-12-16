@@ -24,7 +24,7 @@ export default function index() {
     return (
         <div>
             <Header></Header>
-            {product && <ProductContainer source={product.source} currency={product.currency} name={product.name} likes={10} owner={product.owner} price={product.price} details={product.details} bids={product.bids} auction_end={product.auction_end} ></ProductContainer>}
+            {product && <ProductContainer source={product.source} currency={product.currency} name={product.name} likes={product.likes} owner={product.owner} price={product.price} details={product.details} bids={product.bids} auction_end={product.auction_end} ></ProductContainer>}
             <Footer></Footer>
         </div>
     )

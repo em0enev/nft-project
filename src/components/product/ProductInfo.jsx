@@ -22,10 +22,10 @@ export default function ProductInfo({ title, creator, price, currency, likes, on
             </div>
             <div className={classNames(styles["creator-container"])}>
                 <Grid container spacing={2}>
-                    <Grid item xs={7}>
+                    <Grid item xs={12} sm={7}>
                         <ProductInfoCreator name={creator.username} avatar={creator.avatar.url} verified={creator.verified}></ProductInfoCreator>
                     </Grid>
-                    <Grid item xs={5}>
+                    <Grid item xs={12} sm={5}>
                         {isLive ? <ProductInfoTimer onTimeEnd={onTimeEnd} timeEnd={timeEnd}></ProductInfoTimer> : <ProductInfoTimer />}
                     </Grid>
                 </Grid>
