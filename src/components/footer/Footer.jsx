@@ -21,10 +21,13 @@ export default function Footer() {
                 alignItems="center"
                 sx={{
                     backgroundColor: "#181828",
-                    height: "80px",
                     alignItems: "center",
+                    paddingX: "61px",
                 }}>
-                <Grid item display={{ xs: "none", md: "flex" }}>
+                <Grid
+                    item
+                    display={{ xs: "none", md: "flex" }}
+                    sx={{ paddingY: "18px" }}>
                     <Logo type={"muted"} />
                 </Grid>
                 <Grid item textAlign="center" order={{ xs: "2", md: "1" }}>
@@ -36,12 +39,22 @@ export default function Footer() {
                 </Grid>
                 <Grid item order={{ xs: "1", md: "2" }}>
                     <Button
-                        sx={{ color: "#FFFFFF", padding: "0 10px 0 0" }}
+                        sx={{
+                            color: "#FFFFFF",
+                            padding: "0 10px 0 0",
+                            fontSize: "0.9rem",
+                            textTransform: "none",
+                        }}
                         size="small">
                         Privacy Policy
                     </Button>
                     <Button
-                        sx={{ color: "#FFFFFF", padding: "0 0 0 10px" }}
+                        sx={{
+                            color: "#FFFFFF",
+                            padding: "0 0 0 10px",
+                            fontSize: "0.9rem",
+                            textTransform: "none",
+                        }}
                         size="small">
                         Cookie Policy
                     </Button>
