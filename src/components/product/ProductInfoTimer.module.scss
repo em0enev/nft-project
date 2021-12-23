@@ -1,10 +1,10 @@
 @use "../../styles/colors";
 
-.title{
+.title {
     color: rgb(24, 24, 40);
 }
 
-.product-info-timer{
+.product-info-timer {
     width: 100%;
 }
 
@@ -18,7 +18,7 @@
     height: 37px;
 }
 
-.timer-container{
+.timer-container {
     font-weight: bold;
     background: colors.$secondary_main;
     color: rgb(24, 24, 40);
@@ -30,6 +30,6 @@
     height: 81px;
 }
 
-.card{
+.card {
     height: 118px;
 }

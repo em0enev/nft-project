@@ -9,12 +9,12 @@ npm run dev
 
 ## 😏 Some tips
 
-- Use the colors from the `src/styles/colors.scss` file
-- Use the custom `Link` component provided in the example
-- Define pages in separate folders
-- Use the classNames module when adding multiple (or single) classes
-- Define components in the `/components` folder
-- You shouldn't delete files from the boilerplate. You can only delete the Example component or build on top of it.
+-   Use the colors from the `src/styles/colors.scss` file
+-   Use the custom `Link` component provided in the example
+-   Define pages in separate folders
+-   Use the classNames module when adding multiple (or single) classes
+-   Define components in the `/components` folder
+-   You shouldn't delete files from the boilerplate. You can only delete the Example component or build on top of it.
 
 ## 💡 The idea
 

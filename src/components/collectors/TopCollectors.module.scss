@@ -1,22 +1,25 @@
-.divWrapper{
+.divWrapper {
+    display: flex;
+    justify-content: center;
     background-color: rgba(78, 36, 242, 0.05);
 }
 
-.select-menu{
+.select-menu {
     width: 220px;
     div {
         padding-left: 25px;
     }
 }
 
-.title-filters-container{
-    margin-bottom: 40px;
+.title-filters-container {
+    margin-bottom: 37px !important;
 }
 
-.top-collector-section{
-    padding: 110px 0;
+.top-collector-section {
+    padding: 80px 61px !important;
+    margin-bottom: 37px;
 }
 
-.sortby-label{
-  padding-left: 12px;
+.sortby-label {
+    padding-left: 12px;
 }

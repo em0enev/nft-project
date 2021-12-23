@@ -1,34 +1,42 @@
-.divWrapper{
-    display: grid ;
-    justify-items: center ;
+.divWrapper {
+    display: grid;
+    justify-items: center;
     align-content: center;
-    background-color: rgb(78,36, 242);
-    min-height: 640px ;
+    background-color: rgb(78, 36, 242);
+    min-height: 640px;
 }
 
-.grid-container{
+.grid-container {
     justify-content: space-between;
-    padding: 0 36px;
+    padding: 0 61px;
     gap: 50px;
 }
 
-.text-container{
+.text-container {
+    padding-left: 1rem;
     align-items: center;
     align-content: center;
 }
 
-.description{
-    padding: 30px 0 40px 0 ;
+.description {
+    padding: 30px 0 40px 0;
 }
 
-.step-container{
+.step-container {
     display: grid;
     gap: 30px;
-    margin-top: -20px !important;
-    margin-bottom: -20px !important;
+    margin-top: -30px !important;
+    margin-bottom: -36px !important;
 }
 
-.learn-more-btn{
+.learn-more-btn {
     background-color: white !important;
-    color: rgb(78,36, 242) !important;
+    color: rgb(78, 36, 242) !important;
+    width: 100%;
+    max-width: 195px;
+    min-height: 59px;
+    font-weight: 700 !important;
+    border-radius: 30px !important;
+    position: relative;
+    top: 11px;
 }
