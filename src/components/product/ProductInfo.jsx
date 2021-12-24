@@ -19,14 +19,14 @@ export default function ProductInfo({
     isLive,
 }) {
     return (
-        <div className={classNames(styles["product-info"])}>
+        <div className={classNames(styles["product-info-container"])}>
             <ProductInfoTitle text={title}></ProductInfoTitle>
             <div className={classNames(styles["price-container"])}>
                 <ProductInfoPrice
                     amount={price}
                     currency={currency}></ProductInfoPrice>
                 <Stack
-                    className={classNames(styles.stats)}
+                    className={classNames(styles["stats"])}
                     direction="row"
                     spacing={1}>
                     {isLive && <ProductInfoStatus></ProductInfoStatus>}

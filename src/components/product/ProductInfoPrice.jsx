@@ -7,7 +7,7 @@ export default function ProductInfoPrice({ amount = 0, currency }) {
         <div className={classNames(styles["product-info-price"])}>
             <Typography
                 color="textSecondary"
-                className={classNames(styles.text)}>
+                className={classNames(styles["text"])}>
                 ON SALE FOR {amount} {currency}
             </Typography>
         </div>

@@ -1,9 +1,10 @@
-.product-info {
+.product-info-container {
     width: 100%;
 }
 
 .price-container {
     display: flex;
+    align-items: center;
     padding: 15px 0;
 }
 

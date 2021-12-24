@@ -5,3 +5,14 @@
     min-height: 100vh;
     padding: 50px;
 }
+
+.info-container {
+    width: 100%;
+    max-width: 577px;
+}
+
+.grid-container{
+    justify-content: space-between;
+    padding: 0 58px;
+    margin-top: 27px;
+}

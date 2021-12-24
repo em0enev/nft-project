@@ -1,9 +1,11 @@
-.product-info-title {
+.product-info-title-container {
     width: 100%;
-    padding-bottom: 25px;
-    border-bottom: 4px solid rgb(25, 17, 64);
+    padding-bottom: 2rem;
+    border-bottom: 3px solid rgb(25, 17, 64);
 }
 
 .title {
     font-weight: bold;
+    font-size: 3.75rem;
+    font-weight: 900;
 }

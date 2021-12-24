@@ -27,11 +27,18 @@ export default function ProductContainer({
 
     return (
         <div className={classNames(styles["product-container"])}>
-            <Grid container spacing={5} maxWidth="xl">
+            <Grid
+                container
+                className={classNames(styles["grid-container"])}
+                maxWidth="xl">
                 <Grid item xs={12} md={6}>
                     <ProductImage url={source.url} />
                 </Grid>
-                <Grid item xs={12} md={6}>
+                <Grid
+                    item
+                    className={classNames(styles["info-container"])}
+                    xs={12}
+                    md={6}>
                     <ProductInfo
                         timeEnd={auction_end}
                         onTimeEnd={() => {}}
