@@ -1,15 +1,12 @@
-@use "../../styles/colors";
-
 .hero {
     width: 100%;
-    min-height: 362px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: colors.$primary_main;
 }
 
 .text {
+    margin-top: 88px !important;
     margin-bottom: 120px !important;
 }

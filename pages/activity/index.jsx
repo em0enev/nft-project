@@ -3,7 +3,10 @@ import Hero from "../../src/components/hero/Hero.jsx";
 import ActivityFilters from "../../src/components/activity/ActivityFilters.jsx";
 import ActivityList from "../../src/components/activity/ActivityList.jsx";
 import Footer from "../../src/components/footer/Footer.jsx";
+import classNames from "classnames";
+import styles from "./index.module.scss";
 import { useEffect, useState } from "react";
+import { Box } from "@mui/material";
 
 export default function Activity() {
     const [activities, setActivities] = useState();
@@ -46,7 +49,9 @@ export default function Activity() {
     return (
         <div>
             <Header />
-            <Hero text={"Activity"} />
+            <Box className={classNames(styles["hero-box"])}>
+                <Hero text={"Activity"} />
+            </Box>
             {filters && (
                 <ActivityFilters
                     filters={filters}
