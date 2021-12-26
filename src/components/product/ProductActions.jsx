@@ -13,39 +13,25 @@ export default function ProductActions({
 }) {
     return (
         <div className={classNames(styles["product-action"])}>
-            <Grid container spacing={2}>
-                <Grid item xs={12} sm={7}>
+            <Grid container spacing={0.5}>
+                <Grid item item xs={12} sm={7.5}>
                     <Button
                         disabled={isLive}
                         fullWidth
-                        className={classNames(styles.button)}
+                        className={classNames(styles["buy-button"])}
                         variant="contained"
-                        onClick={onBuy}
-                        sx={{
-                            "&:disabled": {
-                                backgroundColor: "rgba(41,41,49)",
-                                color: "rgb(134,134,138)",
-                            },
-                        }}>
+                        onClick={onBuy}>
                         Buy for {buyAmount} {currency}
                     </Button>
                 </Grid>
-                <Grid item xs={12} sm={5}>
+                <Grid item xs={12} sm={4.5}>
                     <Button
                         disabled={isLive}
                         fullWidth
-                        className={classNames(styles.button)}
+                        className={classNames(styles["bid-button"])}
                         variant="outlined"
                         color={"success"}
-                        onClick={onBid}
-                        sx={{
-                            border: "2px rgba(36, 242, 94) solid",
-                            color: "rgba(36, 242, 94)",
-                            "&:disabled": {
-                                border: "2px rgba(41,41,49) solid",
-                                color: "rgb(134,134,138)",
-                            },
-                        }}>
+                        onClick={onBid}>
                         Place bid for {bidAmount} {currency}
                     </Button>
                 </Grid>

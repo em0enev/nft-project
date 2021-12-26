@@ -20,10 +20,15 @@ export default function ProductContainer({
     bids,
 }) {
     const [isLive, setIsLive] = useState(false);
-
     useEffect(() => {
         setIsLive(Date.now() <= parseISO(auction_end));
     }, []);
+
+    useEffect(() => {
+        bids.sort((a, b) => {
+            return a.amount - b.amount;
+        });
+    }, [bids]);
 
     return (
         <div className={classNames(styles["product-container"])}>
@@ -54,7 +59,7 @@ export default function ProductContainer({
                         buyAmount={price}
                         currency={currency}
                         isLive={!isLive}
-                        bidAmount={price + 1}
+                        bidAmount={bids[bids.length - 1].amount + 0.1}
                         onBid={() => {}}
                         onBuy={() => {}}
                     />
