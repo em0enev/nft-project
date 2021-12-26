@@ -12,9 +12,7 @@ export default function ProductInfoTimer({ timeEnd, onTimeEnd }) {
                         <Grid
                             item
                             className={classNames(styles["title-container"])}>
-                            <Typography
-                                className={classNames(styles["title"])}
-                                variant="h5">
+                            <Typography className={classNames(styles["title"])}>
                                 ENDS IN
                             </Typography>
                         </Grid>
