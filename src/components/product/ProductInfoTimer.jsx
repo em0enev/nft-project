@@ -4,7 +4,6 @@ import { Card, Grid, Typography } from "@mui/material";
 import Countdown, { zeroPad } from "react-countdown";
 
 export default function ProductInfoTimer({ timeEnd, onTimeEnd }) {
-    console.log(timeEnd);
     return (
         <div className={classNames(styles["product-info-timer"])}>
             <Card className={classNames(styles.card)}>
@@ -14,7 +13,7 @@ export default function ProductInfoTimer({ timeEnd, onTimeEnd }) {
                             item
                             className={classNames(styles["title-container"])}>
                             <Typography
-                                className={classNames(styles.title)}
+                                className={classNames(styles["title"])}
                                 variant="h5">
                                 ENDS IN
                             </Typography>

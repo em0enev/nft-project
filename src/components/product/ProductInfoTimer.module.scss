@@ -4,10 +4,6 @@
     color: rgb(24, 24, 40);
 }
 
-.product-info-timer {
-    width: 100%;
-}
-
 .title-container {
     display: flex;
     justify-content: center;
@@ -31,5 +27,6 @@
 }
 
 .card {
-    height: 118px;
+    min-height: 118px;
+    border-radius: 15px;
 }

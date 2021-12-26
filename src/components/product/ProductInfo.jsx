@@ -34,14 +34,14 @@ export default function ProductInfo({
                 </Stack>
             </div>
             <div className={classNames(styles["creator-container"])}>
-                <Grid container spacing={2}>
-                    <Grid item xs={12} sm={7}>
+                <Grid container spacing={0.5}>
+                    <Grid item xs={12} sm={7.5}>
                         <ProductInfoCreator
                             name={creator.username}
                             avatar={creator.avatar.url}
                             verified={creator.verified}></ProductInfoCreator>
                     </Grid>
-                    <Grid item xs={12} sm={5}>
+                    <Grid item xs={12} sm={4.5}>
                         {isLive ? (
                             <ProductInfoTimer
                                 onTimeEnd={onTimeEnd}
