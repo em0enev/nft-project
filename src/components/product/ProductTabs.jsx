@@ -15,61 +15,44 @@ import { parseISO, formatDistance } from "date-fns";
 import { Box } from "@mui/system";
 
 export default function ProductTabs({ text, bids }) {
-    const [value, setValue] = useState("1");
+    const [tabValue, setTabValue] = useState("1");
 
     const handleChange = (event, newValue) => {
-        setValue(newValue);
+        setTabValue(newValue);
     };
 
     return (
         <div className={classNames(styles["product-tabs"])}>
-            <TabContext value={value}>
-                <Box
-                    sx={{
-                        borderBottom: 5,
-                        borderColor: "rgb(25,17, 64)",
-                        marginTop: "5px",
-                    }}>
-                    <TabList
-                        onChange={handleChange}
-                        sx={{ marginBottom: "-3px" }}>
+            <TabContext value={tabValue}>
+                <Box className={classNames(styles["tab-list-wrapper"])}>
+                    <TabList textColor="textPrimary" onChange={handleChange}>
                         <Tab
-                            className={classNames(styles["tab-details"])}
+                            className={classNames(styles["tab-title"])}
                             label="DETAILS"
                             value="1"
                         />
                         <Tab
-                            className={classNames(styles["tab-bids"])}
+                            className={classNames(styles["tab-title"])}
                             label="BIDS"
                             value="2"
                         />
                     </TabList>
                 </Box>
-                <TabPanel sx={{ paddingX: 0 }} value="1">
+                <TabPanel
+                    className={classNames(styles["tab-details"])}
+                    value="1">
                     <Typography
                         color="textSecondary"
                         className={classNames(styles["details-text"])}>
                         {text}
                     </Typography>
                 </TabPanel>
-                <TabPanel value="2" sx={{ paddingX: 0, overflowX: "auto" }}>
-                    <Table>
+                <TabPanel value="2" className={classNames(styles["tab-bids"])}>
+                    <Table className={classNames(styles["table"])}>
                         <TableBody>
                             {bids.map((el, i) => {
                                 return (
                                     <TableRow
-                                        sx={{
-                                            td: {
-                                                border: 0,
-                                                padding: "0 24px",
-                                                height: "65px",
-                                                backgroundColor:
-                                                    i % 2 === 0
-                                                        ? "rgb(78, 36, 242,0.05)"
-                                                        : "rgb(78, 36, 242,0.15)",
-                                            },
-                                        }}
-                                        onCopyCapture
                                         className={classNames([
                                             `table-row-${i}`,
                                         ])}
@@ -83,20 +66,19 @@ export default function ProductTabs({ text, bids }) {
                                             />
                                         </TableCell>
                                         <TableCell
-                                            align="right"
-                                            sx={{
-                                                color: "rgb(36,244,95)",
-                                                fontWeight: "bold",
-                                            }}>
-                                            {el.amount}{" "}
+                                            className={classNames(
+                                                styles["price"]
+                                            )}>
+                                            {el.amount}
                                         </TableCell>
                                         <TableCell
-                                            align="right"
-                                            sx={{ fontWeight: "bold" }}>
+                                            className={classNames(
+                                                styles["date"]
+                                            )}>
                                             {formatDistance(
                                                 parseISO(el.date),
                                                 Date.now()
-                                            )}{" "}
+                                            )}
                                             ago
                                         </TableCell>
                                     </TableRow>
