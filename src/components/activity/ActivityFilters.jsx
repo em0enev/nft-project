@@ -11,7 +11,6 @@ import {
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { useState } from "react";
-import { Box } from "@mui/material/node_modules/@mui/system";
 
 export default function ActivityFilters({
     filters,
@@ -34,16 +33,19 @@ export default function ActivityFilters({
     return (
         <div className={classNames(styles["activity-filters"])}>
             <Stack
+                className={classNames(styles["form-stack"])}
                 direction={{ xs: "column", md: "row" }}
                 alignItems="center"
                 spacing={1}>
-                <FormControl sx={{ width: "220px" }}>
-                    <InputLabel id="sort-by-label" sx={{ paddingLeft: "10px" }}>
+                <FormControl className={classNames(styles["dropdown-form"])}>
+                    <InputLabel
+                        id="sort-by-label"
+                        className={classNames(styles["label-text"])}>
                         {"Sort by"}
                     </InputLabel>
                     <Select
+                        className={classNames(styles["select-text"])}
                         labelId="sort-by-label"
-                        sx={{ div: { paddingLeft: "25px" } }}
                         value={sortBy}
                         onChange={handleSortBy}>
                         {filters.sort.map((el) => {
@@ -55,13 +57,15 @@ export default function ActivityFilters({
                         })}
                     </Select>
                 </FormControl>
-                <FormControl sx={{ width: "220px" }}>
-                    <InputLabel id="type-label" sx={{ paddingLeft: "10px" }}>
+                <FormControl className={classNames(styles["dropdown-form"])}>
+                    <InputLabel
+                        className={classNames(styles["label-text"])}
+                        id="type-label">
                         {"Type"}
                     </InputLabel>
                     <Select
+                        className={classNames(styles["select-text"])}
                         labelId="type-label"
-                        sx={{ div: { paddingLeft: "25px" } }}
                         value={type}
                         onChange={handleTimePeriod}>
                         {filters.type.map((el) => {
@@ -73,17 +77,21 @@ export default function ActivityFilters({
                         })}
                     </Select>
                 </FormControl>
-                <FormControl sx={{ width: "340px" }}>
+                <FormControl className={classNames(styles["input-form"])}>
                     <TextField
+                        className={classNames(styles["text-fild"])}
                         fullWidth
-                        sx={{ div: { backgroundColor: "rgb(24, 24,40)" } }}
                         InputProps={{
                             startAdornment: (
                                 <InputAdornment
                                     position="start"
                                     color="secondary"
                                     variant="standard">
-                                    <SearchIcon sx={{ color: "#E1E1FC" }} />
+                                    <SearchIcon
+                                        className={classNames(
+                                            styles["search-icon"]
+                                        )}
+                                    />
                                 </InputAdornment>
                             ),
                         }}

@@ -2,7 +2,8 @@
     display: flex;
     width: 100%;
     max-width: 940px;
-    min-height: 105px;
+    max-height: 105px;
+    border-radius: 15px !important;
 }
 
 .avatar {
@@ -32,4 +33,9 @@
 
 .action-info strong {
     color: #ffffff;
+}
+
+.link {
+    color: #24F25E !important;
+    text-decoration-color: #24F25E !important;
 }

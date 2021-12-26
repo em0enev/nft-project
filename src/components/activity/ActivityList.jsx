@@ -10,18 +10,10 @@ export default function ActivityList({ items }) {
                 direction="column"
                 justifyContent="center"
                 alignItems="center"
-                spacing={1}>
-                {items.map((el, i) => {
-                    return (
-                        <ActivityListItem
-                            key={i}
-                            created_at={el.created_at}
-                            nft={el.nft}
-                            user={el.user}
-                            type={el.type}
-                        />
-                    );
-                })}
+                gap="20px">
+                {items.map((el) => (
+                    <ActivityListItem key={el.id} {...el} />
+                ))}
             </Stack>
         </div>
     );
