@@ -14,14 +14,18 @@ export default function ProfileCollection({
     return (
         <div className={classNames(styles["profile-collection"])}>
             <Container maxWidth="xl">
-                <Grid container spacing={3} sx={{ alignItems: "baseline" }}>
+                <Grid container spacing={3} paddingX={{ xs: 0, lg: "25px" }}>
                     <Grid
                         item
                         xs={12}
                         lg={3}
                         display="flex"
                         justifyContent={{ xs: "center", lg: "flex-start" }}>
-                        <Typography variant={"h2"}>Collection</Typography>
+                        <Typography
+                            className={classNames(styles["collection-text"])}
+                            variant={"h2"}>
+                            Collection
+                        </Typography>
                     </Grid>
                     <Grid
                         item
@@ -40,9 +44,10 @@ export default function ProfileCollection({
                     container
                     direction="row"
                     justifyContent={{ xs: "center", lg: "flex-start" }}
+                    paddingX={{ xs: 0, lg: "25px" }}
+                    marginTop="15px"
                     alignItems="center"
-                    spacing={2}
-                    sx={{ marginTop: "40px" }}>
+                    spacing={2}>
                     {items.map((el) => {
                         return (
                             <Grid item key={el.id}>
