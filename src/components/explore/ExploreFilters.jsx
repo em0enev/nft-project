@@ -37,11 +37,10 @@ export default function ExploreFilters({
                 justifyContent="flex-end"
                 alignItems="center"
                 spacing={1}>
-                <FormControl sx={{ width: "220px" }}>
+                <FormControl className={classNames(styles["dropdown-form"])}>
                     <InputLabel id="sort-by-label">{"Sort by"}</InputLabel>
                     <Select
                         labelId="sort-by-label"
-                        sx={{ minWidth: "170px" }}
                         value={sortBy}
                         onChange={handleSortBy}>
                         {filters &&
@@ -54,13 +53,12 @@ export default function ExploreFilters({
                             })}
                     </Select>
                 </FormControl>
-                <FormControl sx={{ width: "220px" }}>
+                <FormControl className={classNames(styles["dropdown-form"])}>
                     <InputLabel id="price-range-label">
                         {"Price range"}
                     </InputLabel>
                     <Select
                         labelId="price-range-label"
-                        sx={{ minWidth: "170px" }}
                         value={price}
                         onChange={handleTimePeriod}>
                         {filters.price.map((el) => {
@@ -72,17 +70,21 @@ export default function ExploreFilters({
                         })}
                     </Select>
                 </FormControl>
-                <FormControl sx={{ width: "340px" }}>
+                <FormControl className={classNames(styles["input-form"])}>
                     <TextField
                         fullWidth
-                        sx={{ div: { backgroundColor: "rgb(24, 24,40)" } }}
+                        className={classNames(styles["text-fild"])}
                         InputProps={{
                             startAdornment: (
                                 <InputAdornment
                                     position="start"
                                     color="secondary"
                                     variant="standard">
-                                    <SearchIcon sx={{ color: "#E1E1FC" }} />
+                                    <SearchIcon
+                                        className={classNames(
+                                            styles["search-icon"]
+                                        )}
+                                    />
                                 </InputAdornment>
                             ),
                         }}

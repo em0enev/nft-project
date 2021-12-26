@@ -33,7 +33,7 @@ export default function Card({
                     : classNames(styles.card)
             }
             sx={timeLeft ? { backgroundColor: "rgba(36, 242, 94, 0.1)" } : {}}>
-            <CardContent>
+            <CardContent className={classNames(styles["card-content"])}>
                 <Avatar
                     verified={user.verified}
                     url={user.avatar.url}

@@ -73,17 +73,19 @@ export default function Explore() {
                 <Grid
                     container
                     justifyContent={{ xs: "center", lg: "space-between" }}
-                    gap={"10px"}
-                    // rowSpacing={2}
-                    sx={{ marginTop: "60px" }}>
+                    columnGap={"20px"}
+                    rowGap={"26px"}
+                    marginTop={"50px"}>
                     {nfts &&
                         nfts.map((el) => {
                             return (
                                 <Grid
                                     item
+                                    className={classNames(
+                                        styles["card-container"]
+                                    )}
                                     xs={3}
-                                    key={el.id}
-                                    sx={{ width: "100%", maxWidth: "335px" }}>
+                                    key={el.id}>
                                     <Card
                                         name={el.name}
                                         price={el.price}
