@@ -5,13 +5,21 @@
 }
 
 .select-menu {
-    width: 220px;
     div {
         padding-left: 25px;
     }
 }
 
+.dropdown-form {
+    width: 100%;
+    max-width: 220px;
+}
+
 .title-filters-container {
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
     margin-bottom: 37px !important;
 }
 
@@ -22,4 +30,10 @@
 
 .sortby-label {
     padding-left: 12px;
+}
+
+.card-container {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
 }

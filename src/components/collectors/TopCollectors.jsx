@@ -41,13 +41,11 @@ export default function TopCollectors({
                 className={classNames(styles["top-collector-section"])}>
                 <Grid
                     container
-                    item
                     className={classNames(styles["title-filters-container"])}
-                    direction="row"
-                    justifyContent="space-between"
-                    alignItems="center">
+                    justifyContent={{ xs: "center", md: "space-between" }}>
                     <Typography variant="h2">Top Collectors</Typography>
-                    <FormControl>
+                    <FormControl
+                        className={classNames(styles["dropdown-form"])}>
                         <InputLabel
                             className={classNames(styles["sortby-label"])}
                             id="sort-by-label">
@@ -58,8 +56,8 @@ export default function TopCollectors({
                             labelId="sort-by-label"
                             value={sortBy}
                             onChange={handleChange}>
-                            {filters.map((el, i) => (
-                                <MenuItem key={i} value={el.value}>
+                            {filters.map((el) => (
+                                <MenuItem key={el.value} value={el.value}>
                                     {el.label}
                                 </MenuItem>
                             ))}
@@ -68,19 +66,11 @@ export default function TopCollectors({
                 </Grid>
                 <Grid
                     container
-                    item
-                    direction="row"
-                    justifyContent="space-between"
-                    alignItems="center"
-                    gap={"10px"}>
+                    className={classNames(styles["card-container"])}
+                    justifyContent={{ xs: "center", md: "space-between" }}>
                     {collectorsDescOrder &&
                         collectorsDescOrder.map((el, i) => (
-                            <Grid
-                                item
-                                key={i}
-                                sx={{ maxWidth: "340px", width: "100%" }}>
-                                <CollectorColumn items={el} key={i} />
-                            </Grid>
+                            <CollectorColumn items={el} key={i} />
                         ))}
                 </Grid>
             </Grid>
