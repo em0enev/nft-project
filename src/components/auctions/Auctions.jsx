@@ -58,7 +58,11 @@ export default function Auctions({
                     className={classNames(styles["card-container"])}
                     justifyContent={{ xs: "center", md: "space-between" }}>
                     {cards.map((card) => (
-                        <Card key={card.id} {...card} />
+                        <Card
+                            key={card.id}
+                            timeLeft={card.auction_end}
+                            {...card}
+                        />
                     ))}
                 </Grid>
             </Container>
