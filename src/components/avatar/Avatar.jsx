@@ -4,15 +4,18 @@ import styles from "./Avatar.module.scss";
 export default function Avatar({ size = 90, url, verified = false }) {
     const defaultImageSrc = "/images/avatar.png";
     const badgeIconSrc = "/images/verified.svg";
-    const imgSrc = url !== undefined ? url : defaultImageSrc;
+    const imgSrc = url ? url : defaultImageSrc;
 
     return (
         <div
-            className={classNames(styles.avatar)}
+            className={classNames(styles["avatar"])}
             style={{ width: size, height: size }}>
-            <img className={classNames(styles.image)} src={imgSrc} />
+            <img className={classNames(styles["image"])} src={imgSrc} />
             {verified && (
-                <img className={classNames(styles.badge)} src={badgeIconSrc} />
+                <img
+                    className={classNames(styles["badge"])}
+                    src={badgeIconSrc}
+                />
             )}
         </div>
     );
