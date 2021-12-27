@@ -3,7 +3,13 @@
     padding: 0 58px !important;
 }
 
-.card-container {
+.card {
     width: 100%;
     max-width: 339px !important;
+}
+
+.cards-container {
+    margin-top: 50px;
+    column-gap: 20px;
+    row-gap: 26px;
 }

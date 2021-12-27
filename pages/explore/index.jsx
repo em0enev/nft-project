@@ -72,28 +72,17 @@ export default function Explore() {
                 </Grid>
                 <Grid
                     container
-                    justifyContent={{ xs: "center", lg: "space-between" }}
-                    columnGap={"20px"}
-                    rowGap={"26px"}
-                    marginTop={"50px"}>
+                    className={classNames(styles["cards-container"])}
+                    justifyContent={{ xs: "center", lg: "space-between" }}>
                     {nfts &&
                         nfts.map((el) => {
                             return (
                                 <Grid
                                     item
-                                    className={classNames(
-                                        styles["card-container"]
-                                    )}
+                                    className={classNames(styles["card"])}
                                     xs={3}
                                     key={el.id}>
-                                    <Card
-                                        name={el.name}
-                                        price={el.price}
-                                        currency={el.currency}
-                                        mediaUrl={el.source.url}
-                                        user={el.owner}
-                                        likes={el.likes}
-                                    />
+                                    <Card {...el} />
                                 </Grid>
                             );
                         })}
