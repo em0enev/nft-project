@@ -10,27 +10,9 @@ import { useState } from "react";
 import Card from "../card/Card";
 import styles from "./Trending.module.scss";
 import classNames from "classnames";
-import { makeStyles } from "@mui/styles";
-import theme from "../../theme.js";
-
-const useStyles = makeStyles(() => ({
-    "title-filters-container": {
-        [theme.breakpoints.down("sm")]: {
-            justifyContent: "center",
-            gap: "10px",
-        },
-    },
-    "cards-container": {
-        [theme.breakpoints.down("lg")]: {
-            justifyContent: "center",
-            gap: "10px",
-        },
-    },
-}));
 
 export default function Trending({ cards = [], filters = [], setTimePeriod }) {
     const [period, setPeriod] = useState("1");
-    const classes = useStyles();
 
     const handleChange = (event) => {
         setPeriod(event.target.value);
@@ -39,46 +21,33 @@ export default function Trending({ cards = [], filters = [], setTimePeriod }) {
 
     return (
         <Container
-            maxWidth="xl"
-            className={classNames(styles["trending-section-container"])}>
+            className={classNames(styles["trending-section-container"])}
+            maxWidth="xl">
             <Grid
                 container
-                className={classNames(
-                    styles["title-filters-container"],
-                    classes["title-filters-container"]
-                )}>
+                className={classNames(styles["title-filters-container"])}
+                justifyContent={{ xs: "center", sm: "space-between" }}>
                 <Typography variant="h2">Trending</Typography>
-                <FormControl>
+                <FormControl className={classNames(styles["select-form"])}>
                     <Select
                         className={classNames(styles["select-menu"])}
                         id="time-period"
                         value={period}
                         onChange={handleChange}>
-                        {filters.map((el) => {
-                            return (
-                                <MenuItem key={el.value} value={el.value}>
-                                    {el.label}
-                                </MenuItem>
-                            );
-                        })}
+                        {filters.map((el) => (
+                            <MenuItem key={el.value} value={el.value}>
+                                {el.label}
+                            </MenuItem>
+                        ))}
                     </Select>
                 </FormControl>
             </Grid>
             <Grid
                 container
-                className={classNames(
-                    styles["cards-container"],
-                    classes["cards-container"]
-                )}>
+                className={classNames(styles["cards-container"])}
+                justifyContent={{ xs: "center", md: "space-between" }}>
                 {cards.map((card) => (
-                    <Card
-                        key={card.name}
-                        name={card.name}
-                        price={card.price}
-                        currency={card.currency}
-                        likes={card.likes}
-                        user={card.owner}
-                        mediaUrl={card.mediaUrl}></Card>
+                    <Card key={card.id} {...card} />
                 ))}
             </Grid>
         </Container>
