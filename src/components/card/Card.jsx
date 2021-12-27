@@ -20,7 +20,7 @@ export default function Card({
     name,
     likes = 0,
     mediaUrl,
-    user,
+    owner,
     price,
     currency,
     timeLeft,
@@ -34,11 +34,13 @@ export default function Card({
             }
             sx={timeLeft ? { backgroundColor: "rgba(36, 242, 94, 0.1)" } : {}}>
             <CardContent className={classNames(styles["card-content"])}>
-                <Avatar
-                    verified={user.verified}
-                    url={user.avatar.url}
-                    size={33}
-                />
+                {owner && (
+                    <Avatar
+                        verified={owner.verified}
+                        url={owner.avatar.url}
+                        size={33}
+                    />
+                )}
                 <Container
                     disableGutters
                     className={classNames(styles.imgContainer)}>
