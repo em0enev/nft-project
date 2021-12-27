@@ -11,24 +11,6 @@ import { useState } from "react";
 import Card from "../card/Card";
 import classNames from "classnames";
 import styles from "./Auctions.module.scss";
-import { makeStyles } from "@mui/styles";
-import theme from "../../theme.js";
-
-const useStyles = makeStyles(() => ({
-    "title-filters-container": {
-        [theme.breakpoints.down("md")]: {
-            textAlign: "center",
-            justifyContent: "center",
-            gap: "10px",
-        },
-    },
-    "cards-container": {
-        [theme.breakpoints.down("lg")]: {
-            justifyContent: "center",
-            gap: "10px",
-        },
-    },
-}));
 
 export default function Auctions({
     cards = [],
@@ -36,7 +18,6 @@ export default function Auctions({
     setLiveAuctionsFilterValue,
 }) {
     const [priceRange, setPriceRange] = useState("");
-    const classes = useStyles();
 
     const handleChange = (event) => {
         setPriceRange(event.target.value);
@@ -46,58 +27,39 @@ export default function Auctions({
     return (
         <div className={classNames(styles["wrapper"])}>
             <Container
-                sx={{ paddingY: "30px" }}
-                maxWidth="xl"
-                className={classNames(styles["auction-container"])}>
+                className={classNames(styles["auction-container"])}
+                maxWidth="xl">
                 <Grid
                     container
-                    className={classNames(classes["title-filters-container"])}
-                    direction="row"
-                    justifyContent="space-between"
-                    alignItems="center"
-                    sx={{ marginTop: "60px", marginBottom: "40px" }}>
+                    className={classNames(styles["auction-header"])}
+                    justifyContent={{ xs: "center", md: "space-between" }}>
                     <Typography variant="h2">🔥 Live Auctions</Typography>
-                    <FormControl>
+                    <FormControl
+                        className={classNames(styles["dropdown-form"])}>
                         <InputLabel
-                            sx={{ paddingLeft: "12px" }}
+                            className={classNames(styles["label-text"])}
                             id="price-range-label">
                             Price range
                         </InputLabel>
                         <Select
-                            sx={{ width: "220px" }}
                             labelId="price-range-label"
                             value={priceRange}
                             onChange={handleChange}>
-                            {filters.map((el) => {
-                                return (
-                                    <MenuItem key={el.value} value={el.value}>
-                                        {el.label}
-                                    </MenuItem>
-                                );
-                            })}
+                            {filters.map((el) => (
+                                <MenuItem key={el.value} value={el.value}>
+                                    {el.label}
+                                </MenuItem>
+                            ))}
                         </Select>
                     </FormControl>
                 </Grid>
                 <Grid
                     container
-                    className={classNames(classes["cards-container"])}
-                    direction="row"
-                    justifyContent="space-between"
-                    alignItems="center"
-                    gap={"10px"}>
-                    {cards.map((card) => {
-                        return (
-                            <Card
-                                key={card.name}
-                                name={card.name}
-                                likes={card.likes}
-                                price={card.price}
-                                currency={card.currency}
-                                user={card.owner}
-                                mediaUrl={card.mediaUrl}
-                                timeLeft={card.auction_end}></Card>
-                        );
-                    })}
+                    className={classNames(styles["card-container"])}
+                    justifyContent={{ xs: "center", md: "space-between" }}>
+                    {cards.map((card) => (
+                        <Card key={card.id} {...card} />
+                    ))}
                 </Grid>
             </Container>
         </div>
