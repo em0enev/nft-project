@@ -35,6 +35,8 @@ export default function ProductContainer({
             <Grid
                 container
                 className={classNames(styles["grid-container"])}
+                justifyContent={{ xs: "center", lg: "space-between" }}
+                paddingX={{ xs: "10px", md: "0" }}
                 maxWidth="xl">
                 <Grid item xs={12} md={6}>
                     <ProductImage url={source.url} />

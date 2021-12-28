@@ -3,7 +3,7 @@
     justify-content: center;
     width: 100%;
     min-height: 100vh;
-    padding: 50px;
+    padding-top: 50px;
 }
 
 .info-container {
@@ -12,7 +12,6 @@
 }
 
 .grid-container{
-    justify-content: space-between;
-    padding: 0 58px;
+    display: flex;
     margin-top: 27px;
 }

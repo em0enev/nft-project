@@ -13,8 +13,8 @@ export default function ProfileCollection({
 }) {
     return (
         <div className={classNames(styles["profile-collection"])}>
-            <Container maxWidth="xl">
-                <Grid container spacing={3} paddingX={{ xs: 0, lg: "25px" }}>
+            <Container maxWidth="xl" disableGutters>
+                <Grid container spacing={3}>
                     <Grid
                         item
                         xs={12}
@@ -44,7 +44,6 @@ export default function ProfileCollection({
                     container
                     direction="row"
                     justifyContent={{ xs: "center", lg: "flex-start" }}
-                    paddingX={{ xs: 0, lg: "25px" }}
                     marginTop="15px"
                     alignItems="center"
                     spacing={2}>
@@ -52,7 +51,7 @@ export default function ProfileCollection({
                         return (
                             <Grid item key={el.id}>
                                 <Card
-                                    user={user}
+                                    owner={user}
                                     name={el.name}
                                     price={el.price}
                                     likes={el.likes}

@@ -34,7 +34,7 @@ export default function TopCollectors({
     };
 
     return (
-        <div className={classNames(styles.divWrapper)}>
+        <div className={classNames(styles["wrapper"])}>
             <Grid
                 container
                 maxWidth="xl"

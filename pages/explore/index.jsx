@@ -77,11 +77,7 @@ export default function Explore() {
                     {nfts &&
                         nfts.map((el) => {
                             return (
-                                <Grid
-                                    item
-                                    className={classNames(styles["card"])}
-                                    xs={3}
-                                    key={el.id}>
+                                <Grid item key={el.id}>
                                     <Card {...el} />
                                 </Grid>
                             );

@@ -13,18 +13,17 @@ export default function ProductActions({
 }) {
     return (
         <div className={classNames(styles["product-action"])}>
-            <Grid container spacing={0.5}>
-                <Grid item item xs={12} sm={7.5}>
+            <Grid container spacing={2}>
+                <Grid item item xs={12} sm={7}>
                     <Button
                         disabled={isLive}
                         fullWidth
-                        className={classNames(styles["buy-button"])}
                         variant="contained"
                         onClick={onBuy}>
                         Buy for {buyAmount} {currency}
                     </Button>
                 </Grid>
-                <Grid item xs={12} sm={4.5}>
+                <Grid item xs={12} sm={5}>
                     <Button
                         disabled={isLive}
                         fullWidth

@@ -55,7 +55,7 @@ export default function Header() {
                         variant="text">
                         Activity
                     </Button>
-                    <Button variant="contained">Explore</Button>
+                    <Button variant="contained" size="large">Explore</Button>
                 </Grid>
             </Grid>
         </div>
