@@ -10,16 +10,16 @@ export default function User({
     verified = false,
 }) {
     return (
-        <div className={classNames(styles.user)}>
+        <div className={classNames(styles["user"])}>
             <Avatar
-                className={classNames(styles.avatar)}
+                className={classNames(styles["avatar"])}
                 verified={verified}
                 size={size}
                 url={avatar}
             />
-            <div className={classNames(styles.infoContainer)}>
-                <p className={classNames(styles.name)}>{name}</p>
-                <p className={classNames(styles.info)}>{info}</p>
+            <div className={classNames(styles["info-container"])}>
+                <p className={classNames(styles["name"])}>{name}</p>
+                <p className={classNames(styles["info"])}>{info}</p>
             </div>
         </div>
     );
