@@ -37,7 +37,7 @@ export default function Featured({ items = [] }) {
                         }}>
                         <img
                             src={item.image}
-                            className={classNames(styles.image)}
+                            className={classNames(styles["image"])}
                         />
                     </ImageListItem>
                 ))}
