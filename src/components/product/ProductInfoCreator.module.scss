@@ -1,27 +1,35 @@
 @use "../../styles/colors";
 
-.title-container{
-    height: 45px;
+.title-container {
     display: flex;
     align-items: center;
+    width: 100%;
+    min-height: 37px;
+    padding-left: 27px;
+    background-color: #1d193c;
 }
 
-.title{
-    font-weight: bold;
+.title {
+    font-weight: 600;
+    font-size: 0.75rem;
 }
 
-.product-info-creator{
+.product-info-creator {
     width: 100%;
 }
 
-.user-container{
+.user-container {
     display: flex;
     align-items: center;
-    padding: 7% 10%;
-    height: 90px;
+    min-height: 81px;
+    padding-left: 27px;
+    p {
+        font-size: 1rem;
+    }
 }
 
-.card{
-    height: 135px;
+.card {
+    min-height: 118px;
+    
+    border-radius: 15px;
 }
-

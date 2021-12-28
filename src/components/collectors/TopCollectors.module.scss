@@ -1,3 +1,39 @@
-.divWrapper{
-    background-color: #0d0f1f;
+.wrapper {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(78, 36, 242, 0.05);
+}
+
+.select-menu {
+    div {
+        padding-left: 25px;
+    }
+}
+
+.dropdown-form {
+    width: 100%;
+    max-width: 220px;
+}
+
+.title-filters-container {
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    margin-bottom: 37px !important;
+}
+
+.top-collector-section {
+    padding: 90px 0 !important;
+    margin-bottom: 26px;
+}
+
+.sortby-label {
+    padding-left: 12px;
+}
+
+.card-container {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
 }

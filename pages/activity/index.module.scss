@@ -1,0 +1,7 @@
+@use "../../src/styles/colors.scss";
+
+.hero-box {
+    width: 100%;
+    min-height: 362px;
+    background: colors.$primary_main;
+}

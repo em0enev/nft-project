@@ -1,43 +1,55 @@
-import { Container, FormControl, Grid, MenuItem, Select, Typography } from "@mui/material";
+import {
+    Container,
+    FormControl,
+    Grid,
+    MenuItem,
+    Select,
+    Typography,
+} from "@mui/material";
 import { useState } from "react";
-import Card from '../card/Card';
+import Card from "../card/Card";
+import styles from "./Trending.module.scss";
+import classNames from "classnames";
 
-export default function Trending({ cards = [] }) {
-    const [period, setPeriod] = useState("This Week")
+export default function Trending({ cards = [], filters = [], setTimePeriod }) {
+    const [period, setPeriod] = useState("1");
 
     const handleChange = (event) => {
-        setPeriod(event.target.value)
-    }
+        setPeriod(event.target.value);
+        setTimePeriod(event.target.value);
+    };
 
     return (
-        <Container disableGutters sx={{paddingY: "50px"}}>
-            <Grid container
-                direction="row"
-                justifyContent="space-between"
-                alignItems="center"
-                sx={{ marginY: "10px" }}
-            >
+        <Container
+            className={classNames(styles["trending-section-container"])}
+            maxWidth="xl">
+            <Grid
+                container
+                className={classNames(styles["title-filters-container"])}
+                justifyContent={{ xs: "center", sm: "space-between" }}>
                 <Typography variant="h2">Trending</Typography>
-                <FormControl>
+                <FormControl className={classNames(styles["select-form"])}>
                     <Select
-                        sx={{ minWidth: "170px" }}
+                        className={classNames(styles["select-menu"])}
                         id="time-period"
                         value={period}
-                        onChange={handleChange}
-                    >
-                        <MenuItem value={"This Week"}>This Week</MenuItem>
-                        <MenuItem value={"This Month"}>This Month</MenuItem>
+                        onChange={handleChange}>
+                        {filters.map((el) => (
+                            <MenuItem key={el.value} value={el.value}>
+                                {el.label}
+                            </MenuItem>
+                        ))}
                     </Select>
                 </FormControl>
-            </Grid >
-            <Grid container
-                direction="row"
-                justifyContent="space-between"
-                alignItems="center">
-                {cards.map(card => {
-                    return <Card key={card.name} name={card.name} price={card.price} currency={card.currency} user={card.user} mediaUrl={card.mediaUrl}></Card>
-                })}
             </Grid>
-        </Container >
+            <Grid
+                container
+                className={classNames(styles["cards-container"])}
+                justifyContent={{ xs: "center", md: "space-between" }}>
+                {cards.map((card) => (
+                    <Card key={card.id} {...card} />
+                ))}
+            </Grid>
+        </Container>
     );
 }

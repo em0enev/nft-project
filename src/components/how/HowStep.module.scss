@@ -2,24 +2,35 @@
 
 .card {
     display: flex;
-    width: 75%;
-    height: 120px;
+    max-width: 580px;
 }
 
-.numberContainer{
+.number-container {
     display: flex;
-    align-items: center;
     justify-content: center;
-    width: 30%;
+    align-items: center;
     background-color: rgba(colors.$primary_main, 10%);
+    width: 100%;
+    max-width: 187px;
+    min-height: 215px;
+
+    p {
+        font-size: 6.5rem;
+        font-weight: bold;
+    }
 }
 
-.number{
-    font-size: 4.5rem;
-}
+.info-container {
+    margin: auto;
+    display: grid;
+    gap: 10px;
+    padding: 44px 55px;
+    width: 100%;
+    max-width: calc(100% - 187px);
+    min-height: 215px;
 
-.infoCotaniner{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    p {
+        opacity: 0.7;
+        line-height: 24px;
+    }
 }

@@ -1,0 +1,12 @@
+@use "../../src/styles/colors.scss";
+
+.how {
+    display: grid;
+    justify-items: center;
+}
+
+.hero-box {
+    width: 100%;
+    min-height: 322px;
+    background: colors.$primary_main;
+}

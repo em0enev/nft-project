@@ -1,11 +1,12 @@
 @use "../../styles/colors";
 
-.product-info-likes{
+.product-info-likes {
     color: red;
 }
 
-.likes{
-    border-radius: 1px;
+.likes {
+    border-radius: 7px !important;
+    border: 2px solid #24f25e;
     font-weight: bold;
     color: colors.$secondary_main;
 }

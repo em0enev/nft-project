@@ -1,0 +1,40 @@
+.activity-filters {
+    display: flex;
+    justify-content: center;
+    margin-top: -160px;
+    margin-bottom: 40px;
+}
+.form-stack {
+    width: 100%;
+    justify-content: center;
+}
+
+.dropdown-form {
+    width: 100%;
+    max-width: 220px;
+}
+
+.input-form {
+    width: 100%;
+    max-width: 340px;
+}
+
+.label-text {
+    padding-left: 10px !important;
+}
+
+.select-text {
+    div {
+        padding-left: 25px;
+    }
+}
+
+.text-fild {
+    div {
+        background-color: rgb(24, 24, 40);
+    }
+}
+
+.search-icon {
+    color: #e1e1fc;
+}

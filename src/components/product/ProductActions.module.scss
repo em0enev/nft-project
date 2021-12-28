@@ -1,7 +1,20 @@
-.product-action{
-    width: 50%;
+.product-action {
+    width: 100%;
+    margin-top: 45px;
 }
 
-.button{
-    font-weight: bold;
+.buy-button:disabled {
+    background-color: rgba(41, 41, 49);
+    color: rgb(134, 134, 138);
+}
+
+.bid-button {
+    padding: 12px 20px;
+    border: 2px rgba(36, 242, 94) solid;
+    color: rgba(36, 242, 94);
+}
+
+.bid-button:disabled {
+    border: 2px rgba(41, 41, 49) solid;
+    color: rgb(134, 134, 138);
 }

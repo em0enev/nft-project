@@ -1,0 +1,33 @@
+.title-filters-container {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 27px;
+    gap: 10px;
+}
+
+.select-menu {
+    width: 100%;
+
+    div {
+        padding-left: 25px;
+    }
+}
+
+.trending-section-container {
+    margin-top: 32px;
+    padding: 45px 0 !important;
+}
+
+.cards-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.select-form {
+    width: 100%;
+    max-width: 220px;
+}

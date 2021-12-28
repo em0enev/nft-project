@@ -1,41 +1,71 @@
-import { Container, FormControl, Grid, MenuItem, Select, Typography } from "@mui/material";
+import {
+    Container,
+    FormControl,
+    Grid,
+    InputLabel,
+    MenuItem,
+    Select,
+    Typography,
+} from "@mui/material";
 import { useState } from "react";
-import Card from '../card/Card';
+import Card from "../card/Card";
+import classNames from "classnames";
+import styles from "./Auctions.module.scss";
 
-export default function Auctions({ cards = [] }) {
-    const [period, setPeriod] = useState("This Week")
+export default function Auctions({
+    cards = [],
+    filters = [],
+    setLiveAuctionsFilterValue,
+}) {
+    const [priceRange, setPriceRange] = useState("");
 
     const handleChange = (event) => {
-        setPeriod(event.target.value)
-    }
+        setPriceRange(event.target.value);
+        setLiveAuctionsFilterValue(event.target.value);
+    };
 
     return (
-        <Container disableGutters sx={{paddingY: "30px"}}>
-            <Grid container
-                direction="row"
-                justifyContent="space-between"
-                alignItems="center"
-                sx={{ marginY: "10px" }}>
-                <Typography variant="h2">Live Auctions</Typography>
-                <FormControl>
-                    <Select
-                        sx={{ minWidth: "170px" }}
-                        id="time-period"
-                        value={period}
-                        onChange={handleChange}>
-                        <MenuItem value={"This Week"}>This Week</MenuItem>
-                        <MenuItem value={"This Month"}>This Month</MenuItem>
-                    </Select>
-                </FormControl>
-            </Grid >
-            <Grid container
-                direction="row"
-                justifyContent="space-between"
-                alignItems="center">
-                {cards.map(card => {
-                    return <Card key={card.name} name={card.name} price={card.price} currency={card.currency} user={card.user} mediaUrl={card.mediaUrl} timeLeft={card.timeLeft}></Card>
-                })}
-            </Grid>
-        </Container >
+        <div className={classNames(styles["wrapper"])}>
+            <Container
+                className={classNames(styles["auction-container"])}
+                maxWidth="xl">
+                <Grid
+                    container
+                    className={classNames(styles["auction-header"])}
+                    justifyContent={{ xs: "center", md: "space-between" }}>
+                    <Typography variant="h2">🔥 Live Auctions</Typography>
+                    <FormControl
+                        className={classNames(styles["dropdown-form"])}>
+                        <InputLabel
+                            className={classNames(styles["label-text"])}
+                            id="price-range-label">
+                            Price range
+                        </InputLabel>
+                        <Select
+                            labelId="price-range-label"
+                            value={priceRange}
+                            onChange={handleChange}>
+                            {filters.map((el) => (
+                                <MenuItem key={el.value} value={el.value}>
+                                    {el.label}
+                                </MenuItem>
+                            ))}
+                        </Select>
+                    </FormControl>
+                </Grid>
+                <Grid
+                    container
+                    className={classNames(styles["card-container"])}
+                    justifyContent={{ xs: "center", md: "space-between" }}>
+                    {cards.map((card) => (
+                        <Card
+                            key={card.id}
+                            timeLeft={card.auction_end}
+                            {...card}
+                        />
+                    ))}
+                </Grid>
+            </Container>
+        </div>
     );
 }

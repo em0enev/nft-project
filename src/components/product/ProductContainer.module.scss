@@ -1,0 +1,17 @@
+.product-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 50px;
+}
+
+.info-container {
+    width: 100%;
+    max-width: 577px !important;
+}
+
+.grid-container{
+    display: flex;
+    margin-top: 27px;
+}

@@ -1,0 +1,41 @@
+.card {
+    display: flex;
+    width: 100%;
+    max-width: 940px;
+    max-height: 105px;
+    border-radius: 15px !important;
+}
+
+.avatar {
+    width: 125px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info {
+    display: grid;
+    align-content: center;
+    color: #e1e1fc;
+}
+
+.action-info {
+    margin-top: 29px;
+    margin-bottom: 0;
+    color: rgba(225, 225, 252, 0.7);
+}
+
+.time {
+    margin-top: 0;
+    margin-bottom: 27px;
+    color: rgba(225, 225, 252, 0.7);
+}
+
+.action-info strong {
+    color: #ffffff;
+}
+
+.link {
+    color: #24f25e !important;
+    text-decoration-color: #24f25e !important;
+}

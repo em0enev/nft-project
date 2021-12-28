@@ -1,33 +1,33 @@
 @use "../../styles/colors";
-$additional-opacity: 0.15;
-
-.container {
-    width: 320px;
-    height: 30%;
-}
 
 .numberContainer {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 30%;
+    width: 100%;
+    max-width: 79px;
+    min-height: 76px;
     background-color: rgba(colors.$primary_main, 0.25);
 }
 
-.number{
-    font-size: 4.5rem;
+.text {
+    font-size: 20px !important;
+    font-weight: 900 !important;
+    position: relative;
+    left: 10px;
 }
 
-.userContainer{
+.userContainer {
+    width: calc(100% - 79px);
+    padding-left: 16px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    background-color: rgba( colors.$primary_main, 0.1);
-    padding-left: 10px;
+    background-color: rgba(colors.$primary_main, 0.1);
 }
 
 .lightUserContainer {
-     background-color: rgba(colors.$primary_main, 0.25);
+    background-color: rgba(colors.$primary_main, 0.25);
 }
 
 .lightNumberContainer {

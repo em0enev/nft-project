@@ -1,15 +1,55 @@
-.product-tabs{
+.product-tabs {
+    margin-top: 40px;
+}
+
+.tab-title {
+    width: 100%;
+    max-width: 115px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding-bottom: 18px;
+}
+
+.details-text {
+    opacity: 0.7;
+}
+
+.tab-list-wrapper {
+    border-bottom: 3px solid rgb(25, 17, 64);
+}
+
+.tab-details {
+    padding-left: 0;
+}
+
+.tab-bids {
+    padding: 0;
+    overflow-x: auto;
+}
+.table tr {
+    height: 65px;
+}
+.table td {
+    border: 0 !important;
+    padding: 0 24px;
+}
+
+.table tr:nth-child(odd) {
+    background: rgba(78, 36, 242, 0.05);
+}
+.table tr:nth-child(even) {
+    background: rgba(78, 36, 242, 0.15);
+}
+
+.price {
+    color: rgb(36, 244, 95);
+    text-align: end;
+    font-size: 0.875rem;
     font-weight: bold;
 }
 
-.tab-details{
-    font-weight: bold;
-}
-
-.tab-bids{
-    font-weight: bold;
-}
-
-.table-row{
+.date {
+    text-align: end;
+    font-size: 0.875rem;
     font-weight: bold;
 }
