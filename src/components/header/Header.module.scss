@@ -6,5 +6,30 @@
 }
 
 .grid-container {
-    padding: 16px 61px;
+    padding: 18px 61px;
+    align-items: "center" !important;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.button {
+    color: #ffffff !important;
+    text-transform: none !important;
+}
+
+.search-bar {
+    max-width: 580px;
+    div {
+        background-color: rgba(12, 12, 20, 1);
+        max-height: 51px;
+    }
+}
+
+.search-icon {
+    color: #ffffff;
+}
+
+.button-container {
+    flex-direction: row;
+    align-items: center;
 }
