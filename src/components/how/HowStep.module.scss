@@ -3,17 +3,16 @@
 .card {
     display: flex;
     max-width: 580px;
-    max-height: 215px;
 }
 
-.numberContainer {
+.number-container {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgba(colors.$primary_main, 10%);
     width: 100%;
     max-width: 187px;
-    max-height: 215px;
+    min-height: 215px;
 
     p {
         font-size: 6.5rem;
@@ -21,14 +20,14 @@
     }
 }
 
-.infoContainer {
+.info-container {
     margin: auto;
     display: grid;
     gap: 10px;
-    padding: 50px 55px;
+    padding: 44px 55px;
     width: 100%;
     max-width: calc(100% - 187px);
-    max-height: 215px;
+    min-height: 215px;
 
     p {
         opacity: 0.7;
