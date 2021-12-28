@@ -12,3 +12,21 @@
     background-color: #181828;
     margin-top: 50px;
 }
+
+.footer-container {
+    flex-direction: row;
+    align-items: center;
+    background: #181828;
+    padding: 0 61px;
+}
+
+.logo {
+    padding: 18px 0;
+}
+
+.button {
+    color: #ffffff !important;
+    padding: 0 !important;
+    font-size: 0.9rem !important;
+    text-transform: none !important;
+}
