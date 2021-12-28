@@ -1,6 +1,14 @@
 @use "../../styles/colors";
 
-.product-info-status{
+.product-info-status {
     display: inline;
 }
 
+.status {
+    background-color: rgb(39,242, 94);
+    color: black;
+    border-radius: 7px;
+    min-width: 75px;
+    min-height: 33px;
+    font-weight: 900;
+}

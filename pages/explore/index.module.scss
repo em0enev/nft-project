@@ -1,3 +1,10 @@
-.explore-container{
+.explore-container {
     margin-top: 80px;
+    padding: 0 !important;
+}
+
+.cards-container {
+    margin-top: 50px;
+    column-gap: 20px;
+    row-gap: 26px;
 }

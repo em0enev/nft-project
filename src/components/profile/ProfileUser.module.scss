@@ -1,6 +1,6 @@
 @use "../../styles/colors";
 
-.profile-user{
+.profile-user {
     // width: 100%;
     margin-top: -153px;
     margin-bottom: 100px;
@@ -8,12 +8,12 @@
     justify-items: center;
 }
 
-.name{
+.name {
     padding: 26px 0;
 }
 
 .info {
     width: 35%;
     text-align: center;
-    color: colors.$text_secondary;   
+    color: colors.$text_secondary;
 }

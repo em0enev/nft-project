@@ -1,15 +1,18 @@
 @use "../../styles/colors";
 
 .card {
-    width: 334px;
-    height: 443px;
+    max-width: 339px;
+    min-height: 443px;
+    width: 100%;
+    height: auto;
+    border-radius: 15px !important;
 }
 
-.liveCard{
-    background-color: mix( #181828, colors.$secondary_main, $weight: 85);
+.liveCard {
+    background-color: mix(#181828, colors.$secondary_main, $weight: 85);
 }
 
-.media{
+.media {
     position: relative;
     border-radius: 15px;
     margin: 20px 0px;
@@ -17,25 +20,28 @@
     height: 285px;
 }
 
-.title{
-    font-weight: bold;
+.title {
+    max-width: 235px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
-.price{
+.price {
     position: relative;
     top: -5px;
     color: colors.$secondary_main;
 }
 
-.likes{
+.likes {
     box-sizing: border-box;
     padding: 15px;
     width: 70px;
     height: 33px;
-    border: 2px solid
+    border: 2px solid;
 }
 
-.timer{
+.timer {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -49,11 +55,11 @@
     font-weight: 800;
 }
 
-.imgContainer{
+.imgContainer {
     position: relative;
 }
 
-.badge{
+.badge {
     width: 75px;
     height: 30px;
     font-size: 14px;
@@ -67,4 +73,8 @@
     position: absolute;
     top: 5%;
     left: 5%;
+}
+
+.card-content{
+    padding-bottom: 14px !important;
 }

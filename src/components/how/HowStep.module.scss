@@ -2,18 +2,35 @@
 
 .card {
     display: flex;
-    width: 580px;
-    height: 215px;
+    max-width: 580px;
 }
 
-.numberContainer{
-    align-items: center;
+.number-container {
+    display: flex;
     justify-content: center;
+    align-items: center;
     background-color: rgba(colors.$primary_main, 10%);
+    width: 100%;
+    max-width: 187px;
+    min-height: 215px;
+
+    p {
+        font-size: 6.5rem;
+        font-weight: bold;
+    }
 }
 
-.infoContainer{
+.info-container {
+    margin: auto;
     display: grid;
-    gap: 15px;
-    margin: auto 30px;
+    gap: 10px;
+    padding: 44px 55px;
+    width: 100%;
+    max-width: calc(100% - 187px);
+    min-height: 215px;
+
+    p {
+        opacity: 0.7;
+        line-height: 24px;
+    }
 }

@@ -1,9 +1,12 @@
 .product-image {
     width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .image {
-    border-radius: 20px;
-    width: 700px;
-    height: 800px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 699px;
+    height: auto;
 }

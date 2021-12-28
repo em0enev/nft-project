@@ -1,16 +1,18 @@
-.product-info{
-    width: 100%
+.product-info-container {
+    width: 100%;
 }
 
-.price-container{
+.price-container {
     display: flex;
-    padding: 15px 0;
+    align-items: center;
+    margin-top: 15px;
 }
 
-.creator-container{
+.creator-container {
     display: flex;
+    margin-top: 24px;
 }
 
-.stats{
+.stats {
     font-weight: bold;
 }

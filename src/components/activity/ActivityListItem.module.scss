@@ -1,7 +1,9 @@
-.card{
+.card {
     display: flex;
-    width: 940px;
-    height: 105px;
+    width: 100%;
+    max-width: 940px;
+    max-height: 105px;
+    border-radius: 15px !important;
 }
 
 .avatar {
@@ -11,24 +13,29 @@
     align-items: center;
 }
 
-.info{
+.info {
     display: grid;
     align-content: center;
-    color: #E1E1FC;
+    color: #e1e1fc;
 }
 
-.action-info{
+.action-info {
     margin-top: 29px;
     margin-bottom: 0;
     color: rgba(225, 225, 252, 0.7);
 }
 
-.time{
+.time {
     margin-top: 0;
     margin-bottom: 27px;
     color: rgba(225, 225, 252, 0.7);
 }
 
-.action-info strong{
-    color: #ffffff
+.action-info strong {
+    color: #ffffff;
+}
+
+.link {
+    color: #24f25e !important;
+    text-decoration-color: #24f25e !important;
 }
