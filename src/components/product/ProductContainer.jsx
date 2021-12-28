@@ -59,7 +59,11 @@ export default function ProductContainer({
                         buyAmount={price}
                         currency={currency}
                         isLive={!isLive}
-                        bidAmount={bids[bids.length - 1].amount + 0.1}
+                        bidAmount={
+                            bids.length > 0
+                                ? bids[bids.length - 1].amount + 0.1
+                                : 0.1
+                        }
                         onBid={() => {}}
                         onBuy={() => {}}
                     />
