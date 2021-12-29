@@ -5,10 +5,14 @@
 }
 
 .status {
-    background-color: rgb(39,242, 94);
-    color: black;
-    border-radius: 7px;
+    background-color: rgb(39, 242, 94) !important;
+    color: black !important;
+    border-radius: 7px !important;
     min-width: 75px;
     min-height: 33px;
     font-weight: 900;
+}
+
+.dot-icon {
+    color: black !important;
 }
