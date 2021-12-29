@@ -1,6 +1,7 @@
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 import Logo from "../logo/Logo.jsx";
+import Link from "../link/Link.jsx";
 import TextField from "@mui/material/TextField";
 import SearchIcon from "@mui/icons-material/Search";
 import InputAdornment from "@mui/material/InputAdornment";
@@ -15,7 +16,9 @@ export default function Header() {
                 maxWidth="xl"
                 className={classNames(styles["grid-container"])}>
                 <Grid item md={2} display={{ xs: "none", md: "flex" }}>
-                    <Logo></Logo>
+                    <Link href="/">
+                        <Logo />
+                    </Link>
                 </Grid>
                 <Grid item xs={12} md={5} paddingX={{ xs: "10px", md: "0" }}>
                     <TextField
@@ -45,17 +48,25 @@ export default function Header() {
                     xs={12}
                     md={5}
                     justifyContent={{ xs: "center", md: "flex-end" }}>
-                    <Button
-                        className={classNames(styles["button"])}
-                        variant="text">
-                        Home
-                    </Button>
-                    <Button
-                        className={classNames(styles["button"])}
-                        variant="text">
-                        Activity
-                    </Button>
-                    <Button variant="contained" size="large">Explore</Button>
+                    <Link href="/">
+                        <Button
+                            className={classNames(styles["button"])}
+                            variant="text">
+                            Home
+                        </Button>
+                    </Link>
+                    <Link href="/activity">
+                        <Button
+                            className={classNames(styles["button"])}
+                            variant="text">
+                            Activity
+                        </Button>
+                    </Link>
+                    <Link href="/explore">
+                        <Button variant="contained" size="large">
+                            Explore
+                        </Button>
+                    </Link>
                 </Grid>
             </Grid>
         </div>

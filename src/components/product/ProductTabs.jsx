@@ -25,7 +25,7 @@ export default function ProductTabs({ text, bids }) {
         <div className={classNames(styles["product-tabs"])}>
             <TabContext value={tabValue}>
                 <Box className={classNames(styles["tab-list-wrapper"])}>
-                    <TabList textColor="textPrimary" onChange={handleChange}>
+                    <TabList textColor="inherit" onChange={handleChange}>
                         <Tab
                             className={classNames(styles["tab-title"])}
                             label="DETAILS"

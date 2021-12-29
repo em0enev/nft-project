@@ -18,6 +18,7 @@ export default function ProductActions({
                     <Button
                         disabled={isLive}
                         fullWidth
+                        className={classNames(styles["buy-button"])}
                         variant="contained"
                         onClick={onBuy}>
                         Buy for {buyAmount} {currency}

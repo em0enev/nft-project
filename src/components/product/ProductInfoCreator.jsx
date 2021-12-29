@@ -10,7 +10,6 @@ export default function ProductInfoCreator({ name, avatar, verified = false }) {
                 <Grid container>
                     <Grid
                         item
-                        sx={12}
                         className={classNames(styles["title-container"])}>
                         <Typography
                             className={classNames(styles["title"])}
@@ -18,10 +17,7 @@ export default function ProductInfoCreator({ name, avatar, verified = false }) {
                             CREATOR
                         </Typography>
                     </Grid>
-                    <Grid
-                        item
-                        sx={12}
-                        className={classNames(styles["user-container"])}>
+                    <Grid item className={classNames(styles["user-container"])}>
                         <User
                             avatar={avatar}
                             verified={verified}
