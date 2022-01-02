@@ -8,8 +8,8 @@
     border-radius: 15px !important;
 }
 
-.liveCard {
-    background-color: mix(#181828, colors.$secondary_main, $weight: 85);
+.live-card {
+    background-color: rgba(36, 242, 94, 0.1) !important;
 }
 
 .media {
@@ -22,6 +22,8 @@
 
 .title {
     max-width: 235px;
+    font-weight: 900 !important;
+    margin-bottom: 5px !important;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
@@ -29,16 +31,10 @@
 
 .price {
     position: relative;
+    font-weight: 700 !important;
+    font-size: 0.9rem !important;
     top: -5px;
     color: colors.$secondary_main;
-}
-
-.likes {
-    box-sizing: border-box;
-    padding: 15px;
-    width: 70px;
-    height: 33px;
-    border: 2px solid;
 }
 
 .timer {
@@ -55,7 +51,7 @@
     font-weight: 800;
 }
 
-.imgContainer {
+.img-container {
     position: relative;
 }
 
@@ -77,4 +73,10 @@
 
 .card-content {
     padding-bottom: 14px !important;
+}
+
+.fav-chip {
+    border: 2px solid #24f25e !important;
+    font-weight: bold !important;
+    color: colors.$secondary_main !important;
 }
